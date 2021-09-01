@@ -1,13 +1,13 @@
 .modal {
     display: none;
-    height: 50%;
+    height: 90%;
     width: 50%;
-    background-color: black;
   
   }
   
   .modal.active {
     display: flex;
     position: fixed;
+    background-color: black;
   
   }

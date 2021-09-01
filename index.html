@@ -5,192 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-
-    <link rel="stylesheet" href="styles/modal.css">
-
-    <link rel="stylesheet" href="/styles/owl2.css">
-    <link rel="stylesheet" href="/styles/owl.css">
+    
+    <!-- styles -->
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="/styles/modal.css">
 
 </head>
 <body>
-  <nav>
+    <!-- navbar -->
+    <nav>
+        <ul class="nav-links">
 
-    <ul>
+            <li class="nav-link">
+              <div class="nav-anchor">
+                HOME
+              </div>
+            </li> 
 
-      <li>
-        <div onclick="toggleModal('edit-admin-modal')">
-           Admin
-        </div>
-      </li>
+            <li class="nav-link">
+                <div class="nav-anchor">
+                  ABOUT US
+                </div>
+            </li>
 
-      <li>
-        <div>
-           Services
-        </div>
-      </li>
+            <li class="nav-link">
+                <div class="nav-anchor">
+                  Our Services
+                </div>
+            </li>
 
+            <li class="nav-link">
+                <div class="nav-anchor reg-anchor" onclick="toggleModal('client-modal')">
+                    REGISTER
+                </div>
+            </li>
 
-
-    </ul>
-  </nav>
-  <div id="edit-admin-modal" class="modal owl-carousel">
-
-    <form action="https://qat-motors-api.herokuapp.com/admin" method="POST">
-      REGISTER ADMIN
-      <input
-        name="Fullname"
-        type="text"
-        placeholder="Fullname"
-        required
-      />
-      <input
-        name="Username"
-        type="text"
-        placeholder="Username"
-        required
-      />
-      <input
-        name="Password"
-        type="text"
-        placeholder="Password"
-        required
-      />
-      <button type="submit">Register Admin</button>
-    </form>
-
-    <form action="https://qat-motors-api.herokuapp.com/admin" method="POST">
-      EDIT ADMIN
-      <input
-        name="Fullname"
-        type="text"
-        placeholder="Fullname"
-        required
-      />
-      <input
-        name="Username"
-        type="text"
-        placeholder="Username"
-        required
-      />
-      <input
-        name="Password"
-        type="text"
-        placeholder="Password"
-        required
-      />
-      <button type="submit">Register Admin</button>
-    </form>
-
-  </div>
-
-
+        </ul>
+    </nav>
     
+    <!-- different sections on page -->
+    <section class="home"></section>
 
+    <section class="about"></section>
 
-    <form action="https://qat-motors-api.herokuapp.com/client" method="POST">
-        REGISTER CLIENT
-        <input
-            name="Name"
-            type="text"
-            placeholder="Name"
-            required
-          />
-          <input
-            name="Surname"
-            type="text"
-            placeholder="Surname"
-            required
-          />
-          <input
-            name="Title"
-            type="text"
-            placeholder="Title"
-            required
-          />
-          <input
-            name="Email"
-            type="text"
-            placeholder="Email"
-            required
-          />
-          <input
-            name="Cell"
-            type="text"
-            placeholder="Cell"
-            required
-          />
-          <input
-            name="Address"
-            type="text"
-            placeholder="Address"
-            required
-          />
-          <input
-            name="Username"
-            type="text"
-            placeholder="Username"
-            required
-          />
-          <input
-            name="Password"
-            type="text"
-            placeholder="Password"
-            required
-          />
-          <button type="submit">Register Client</button>
-    </form>
+    <section class="contact"></section>
 
-    <form action="https://qat-motors-api.herokuapp.com/vehicle" method="POST">
-        REGISTER VEHICLE
-        <input
-            name="Type"
-            type="text"
-            placeholder="Type"
-            required
-          />
-          <input
-            name="Year_Modal"
-            type="text"
-            placeholder="Year_Modal"
-            required
-          />
-          <input
-            name="VIN_Numb"
-            type="text"
-            placeholder="VIN_Numb"
-            required
-          />
-          <input
-            name="Reg_Numb"
-            type="text"
-            placeholder="Reg_Numb"
-            required
-          />
-          <input
-            name="Username"
-            type="text"
-            placeholder="Username"
-            required
-          />
-          <button type="submit">Register Vehicle</button>
-    </form>
-
-    <!-- owl carousel -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-      crossorigin="anonymous"
-    ></script>
+    <section class="register">
+        <div id="client-modal" class="modal"></div>
+    </section>
     
-
-
+    <!-- scrypts -->
     <script src="/scrypts/navbar.js"></script>
     <script src="/scrypts/modal.js"></script>
-    <script src="/scrypts/owl.js"></script>
-    </body>
+</body>
 </html>

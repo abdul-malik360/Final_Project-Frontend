@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="https://qat-motors-api.herokuapp.com/admin" method="POST">
+        REGISTER ADMIN
+        <input
+          name="Fullname"
+          type="text"
+          placeholder="Fullname"
+          required
+        />
+        <input
+          name="Username"
+          type="text"
+          placeholder="Username"
+          required
+        />
+        <input
+          name="Password"
+          type="text"
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Register Admin</button>
+      </form>
+
+      <br>
+      <br>
+  
+      <form action="https://qat-motors-api.herokuapp.com/client" method="POST">
+        REGISTER CLIENT
+        <label for="Name">Name</label>
+          <input
+            name="Name"
+            type="text"
+            placeholder="John/Jane"
+            required
+          />
+
+          <label for="Surname">Surname</label>
+          <input
+            name="Surname"
+            type="text"
+            placeholder="Doe"
+            required
+          />
+          
+          <label for="Title">Title</label>
+          <select name="Title">
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Miss">Miss</option>
+            
+          </select>
+
+          <label for="Email">Email Address</label>
+          <input
+            name="Email"
+            type="email"
+            placeholder="john/jane@gmail.com"
+            required
+          />
+
+          <label for="Cell">Cell Number</label>
+          <input
+            name="Cell"
+            type="text"
+            placeholder="0723524585"
+            required
+          />
+
+          <label for="Address">Home Address</label>
+          <input
+            name="Address"
+            type="text"
+            placeholder="No. Street Name, Area, Suburb"
+            required
+          />
+
+          <label for="Username">Username</label>
+          <input
+            name="Username"
+            type="text"
+            placeholder="John1/Jane1"
+            required
+          />
+
+          <label for="Password">Password</label>
+          <input
+            name="Password"
+            type="text"
+            placeholder="123456/password"
+            required
+          />
+          <button type="submit">Register Client</button>
+    </form>
+
+    <br>
+    <br>
+
+    <form action="https://qat-motors-api.herokuapp.com/vehicle" method="POST">
+        REGISTER VEHICLE
+        <label for="Type">Vehicle Type</label>
+        <input
+            name="Type"
+            type="text"
+            placeholder="C63"
+            required
+          />
+
+          <label for="Year_Modal">Year Model</label>
+          <input 
+            name="Year_Modal" 
+            type="number" 
+            min="1900" 
+            max="2099" 
+            step="1" 
+            value="2021"
+          />
+          
+          <label for="VIN_Numb">Vin Number</label>
+          <input
+            name="VIN_Numb"
+            type="text"
+            placeholder="4Y1SL65848Z411439"
+            required
+          />
+
+          <label for="Reg_Numb">Registration Number</label>
+          <input
+            name="Reg_Numb"
+            type="text"
+            placeholder="CAA 123-456"
+            required
+          />
+
+          <label for="Username">Username</label>
+          <input
+            name="Username"
+            type="text"
+            placeholder="John1/Jane1"
+            required
+          />
+          <button type="submit">Register Vehicle</button>
+    </form>
+
+    <br>
+    <br>
+
+    <form action="https://qat-motors-api.herokuapp.com/service" method="POST">
+      ADD SERVICE
+      <input
+          name="Type"
+          type="text"
+          placeholder="Type"
+          required
+        />
+
+        <input
+          name="Description"
+          type="text"
+          placeholder="Description"
+          required
+        />
+        <input
+          name="Duration"
+          type="text"
+          placeholder="Duration"
+          required
+        />
+        <input
+          name="Price"
+          type="text"
+          placeholder="Price"
+          required
+        />
+        
+        <button type="submit">Add Service</button>
+  </form>
+
+    <br>
+    <br>
+
+  <form action="https://qat-motors-api.herokuapp.com/appointments" method="POST">
+    ADD APPOINTMENT
+    <label for="Reg_Numb">Registration Number</label>
+    <input
+        name="Reg_Numb"
+        type="text"
+        placeholder="CAA 123-456"
+        required
+    />
+
+    <label for="Type">Type of Service</label>
+    <select name="Type">
+      <option value="Major">Major</option>
+      <option value="Minor">Minor</option>
+      <option value="Hectic">Hectic</option>
+      
+    </select>
+
+    <label for="Day">Day</label>
+    <input
+      id="date"
+      name="Day"
+      type="date"
+      placeholder="Day"
+      required
+      min="2021-10-01" 
+      max="2099-12-31"
+      
+    />
+
+    <label for="Time">Time</label>
+    <input
+      name="Time"
+      type="time"
+      placeholder="Time"
+      required
+      min="09:00" 
+      max="18:00"
+    />
+    
+    <button type="submit">Add Appointment</button>
+</form>
+
+    <script src="/scrypts/weekend.js"></script>
+</body>
+</html>
