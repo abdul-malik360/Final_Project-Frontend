@@ -9,53 +9,197 @@
     <!-- styles -->
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="/styles/modal.css">
+    <link rel="stylesheet" href="/styles/drop.css">
+    <link rel="stylesheet" href="/styles/home.css">
 
 </head>
 <body>
     <!-- navbar -->
-    <nav>
+    <nav class="navbar">
+
         <ul class="nav-links">
 
             <li class="nav-link">
-              <div class="nav-anchor">
-                HOME
-              </div>
+            
+                <a href="#home" class="nav-anchor">HOME</a>
+              
             </li> 
 
             <li class="nav-link">
-                <div class="nav-anchor">
-                  ABOUT US
-                </div>
+            
+                <a href="#about" class="nav-anchor">ABOUT US</a>                  
+                
             </li>
 
             <li class="nav-link">
-                <div class="nav-anchor">
-                  Our Services
-                </div>
+            
+                <a href="#services" class="nav-anchor">Our Services</a>                  
+                
             </li>
 
             <li class="nav-link">
-                <div class="nav-anchor reg-anchor" onclick="toggleModal('client-modal')">
-                    REGISTER
+
+                <div class="nav-anchor" onclick="toggleModal('contact-modal')">
+                  CONTACT US
                 </div>
+
+            </li>
+
+            <li class="nav-link dropdown">
+
+                <div class="nav-anchor dropbtn" onclick="toggleDropBox('home-drop-list')">
+                    MY ACCOUNT
+                </div>
+
+                <div id="home-drop-list" class="dropdown-content">
+                    <a href="#" class="drop-link" onclick="toggleModal('reg-client-modal')">Register</a>
+                    <a href="#" class="drop-link" onclick="toggleModal('log-client-modal')">Login</a>
+                  </div>
+
             </li>
 
         </ul>
     </nav>
     
     <!-- different sections on page -->
-    <section class="home"></section>
+    <section id="home">
+        <h1>QAT</h1>
+        
+    </section>
 
-    <section class="about"></section>
+    <section id="about"></section>
 
-    <section class="contact"></section>
+    <section id="services">
+      <h1>Services</h1>
+      <div class="show_services"></div>
+    </section>
 
-    <section class="register">
-        <div id="client-modal" class="modal"></div>
+    <section id="contact">
+      <div id="contact-modal" class="modal">
+
+        <button onclick="toggleModal('contact-modal')" class="modalbtn">
+            X
+        </button>
+
+        
+        
+    </div>
+    </section>
+
+    <section id="register-login">
+
+        <div id="reg-client-modal" class="modal">
+
+            <button onclick="toggleModal('reg-client-modal')" class="modalbtn">
+                X
+            </button>
+
+            <form action="https://qat-motors-api.herokuapp.com/client" method="POST">
+                REGISTER CLIENT
+                <label for="Name">Name</label>
+                  <input
+                    name="Name"
+                    type="text"
+                    placeholder="John/Jane"
+                    required
+                  />
+        
+                  <label for="Surname">Surname</label>
+                  <input
+                    name="Surname"
+                    type="text"
+                    placeholder="Doe"
+                    required
+                  />
+                  
+                  <label for="Title">Title</label>
+                  <select name="Title">
+                    <option value="Mr">Mr</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Miss">Miss</option>
+                    
+                  </select>
+        
+                  <label for="Email">Email Address</label>
+                  <input
+                    name="Email"
+                    type="email"
+                    placeholder="john/jane@gmail.com"
+                    required
+                  />
+        
+                  <label for="Cell">Cell Number</label>
+                  <input
+                    name="Cell"
+                    type="text"
+                    placeholder="0723524585"
+                    required
+                  />
+        
+                  <label for="Address">Home Address</label>
+                  <input
+                    name="Address"
+                    type="text"
+                    placeholder="No. Street Name, Area, Suburb"
+                    required
+                  />
+        
+                  <label for="Username">Username</label>
+                  <input
+                    name="Username"
+                    type="text"
+                    placeholder="John1/Jane1"
+                    required
+                  />
+        
+                  <label for="Password">Password</label>
+                  <input
+                    name="Password"
+                    type="text"
+                    placeholder="123456/password"
+                    required
+                  />
+                  <button type="submit">Register Client</button>
+            </form>
+            
+        </div>
+
+        <div id="log-client-modal" class="modal">
+            <button onclick="toggleModal('log-client-modal')" class="modalbtn">
+                X
+            </button>
+
+            <form action="https://qat-motors-api.herokuapp.com/client-login" method="GET">
+                LOGIN
+                
+                <label for="Username">Username</label>
+                <input
+                    name="Username"
+                    type="text"
+                    placeholder="John1/Jane1"
+                    required
+                />
+    
+                <label for="Password">Password</label>
+                <input
+                    name="Password"
+                    type="text"
+                    placeholder="123456/password"
+                    required
+                />
+                <button type="submit">LOGIN</button>            
+
+            </form>
+        </div>
     </section>
     
     <!-- scrypts -->
-    <script src="/scrypts/navbar.js"></script>
+    <!-- <script src="/scrypts/navbar.js"></script> -->
     <script src="/scrypts/modal.js"></script>
+    <script src="/scrypts/drop.js"></script>
+    <script src="/scrypts/services.js"></script>
 </body>
 </html>
+
+
+

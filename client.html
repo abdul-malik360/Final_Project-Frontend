@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client</title>
+    
+    <!-- styles -->
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="/styles/modal.css">
+    <link rel="stylesheet" href="/styles/drop.css">
+    <link rel="stylesheet" href="/styles/home.css">
+
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+
+        <ul class="nav-links">
+
+            <li class="nav-link">
+            
+                <a href="#home" class="nav-anchor">HOME</a>
+              
+            </li> 
+
+            <li class="nav-link">
+            
+                <a href="#about" class="nav-anchor">ABOUT US</a>                  
+                
+            </li>
+
+            <li class="nav-link">
+            
+                <a href="#services" class="nav-anchor">Our Services</a>                  
+                
+            </li>
+
+            <li class="nav-link">
+
+                <div class="nav-anchor" onclick="toggleModal('contact-modal')">
+                  CONTACT US
+                </div>
+
+            </li>
+
+            <li class="nav-link dropdown">
+
+                <div class="nav-anchor dropbtn" onclick="toggleDropBox('account-drop-list')">
+                    MY ACCOUNT
+                </div>
+
+                <div id="account-drop-list" class="dropdown-content">
+                    <a href="#" class="drop-link" onclick="toggleModal('profile-modal')">Profile</a>
+                    <a href="#" class="drop-link" onclick="toggleModal('vehicle-modal')">Vehicles</a>
+                    <a href="#" class="drop-link" onclick="toggleModal('appointments-modal')">Appoinments</a>
+                    <a href="/index.html" class="drop-link" >Log Out</a>
+                  </div>
+
+            </li>
+
+        </ul>
+    </nav>
+    
+    <!-- different sections on page -->
+    <section id="home">
+        <h1>QAT</h1>
+        
+    </section>
+
+    <section id="about"></section>
+
+    <section id="services">
+      <h1>Services</h1>
+      <div class="show_services"></div>
+    </section>
+
+    <section id="contact">
+
+      <div id="contact-modal" class="modal">
+
+        <button onclick="toggleModal('contact-modal')" class="modalbtn">
+            X
+        </button>
+
+        
+        
+    </div>
+
+    </section>
+
+    <section id="client">
+
+        <div id="profile-modal" class="modal">
+
+            <button onclick="toggleModal('profile-modal')" class="modalbtn">
+                X
+            </button>
+
+            
+            
+        </div>
+
+        <div id="vehicle-modal" class="modal">
+            <button onclick="toggleModal('vehicle-modal')" class="modalbtn">
+                X
+            </button>
+
+            
+        </div>
+
+        <div id="appointments-modal" class="modal">
+          <button onclick="toggleModal('appointments-modal')" class="modalbtn">
+              X
+          </button>
+
+          
+      </div>
+    </section>
+    
+    <!-- scrypts -->
+    <!-- <script src="/scrypts/navbar.js"></script> -->
+    <script src="/scrypts/modal.js"></script>
+    <script src="/scrypts/drop.js"></script>
+    <script src="/scrypts/services.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    
+    <!-- styles -->
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="/styles/modal.css">
+    <link rel="stylesheet" href="/styles/drop.css">
+    <link rel="stylesheet" href="/styles/home.css">
+
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+
+        <ul class="nav-links">
+
+
+            <li class="nav-link">
+
+                <div class="nav-anchor dropbtn" onclick="toggleDropBox('services-drop-list')">
+                  Services
+                </div>
+
+                <div id="services-drop-list" class="dropdown-content">
+                    <a href="#" class="drop-link" onclick="toggleModal('add-services-modal')">Add</a>
+                    <a href="#" class="drop-link" onclick="toggleModal('vehicle-modal')">Edit</a>
+                    <a href="#" class="drop-link" onclick="toggleModal('appointments-modal')">Delete</a>
+                  </div>
+
+            </li>
+
+            <li class="nav-link dropdown">
+
+                <div class="nav-anchor dropbtn" onclick="toggleDropBox('user-drop-list')">
+                    User Details
+                </div>
+
+                <div id="user-drop-list" class="dropdown-content">
+                    <a href="#" class="drop-link" onclick="toggleModal('clients-modal')">Clients</a>
+                    <a href="#" class="drop-link" onclick="toggleModal('vehicle-modal')">Vehicles</a>
+                    <a href="#" class="drop-link" onclick="toggleModal('appointments-modal')">Appoinments</a>
+                    
+                  </div>
+
+            </li>
+
+            <li class="nav-link dropdown">
+
+                <div class="nav-anchor dropbtn" onclick="toggleDropBox('admin-drop-list')">
+                    Admin Details
+                </div>
+
+                <div id="admin-drop-list" class="dropdown-content">
+                    <a href="#" class="drop-link" onclick="toggleModal('add-admin-modal')">Add</a>    
+                    <a href="#" class="drop-link" onclick="toggleModal('vehicle-modal')">Admin Users</a>
+                    <a href="#" class="drop-link" onclick="toggleModal('appointments-modal')">Edit Admin</a>
+                    <a href="#" class="drop-link" onclick="toggleModal('appointments-modal')">Delete Admin</a>
+                    
+                  </div>
+
+            </li>
+
+        </ul>
+    </nav>
+    
+    <!-- different sections on page -->
+
+    <section id="services">
+        <h1>SERVICES</h1>
+
+        <div class="show_services"></div>
+
+
+        <div id="add-services-modal" class="modal">
+
+            <button onclick="toggleModal('add-services-modal')" class="modalbtn">
+                X
+            </button>
+            <form action="https://qat-motors-api.herokuapp.com/service" method="POST">
+                ADD SERVICE
+                <input
+                    name="Type"
+                    type="text"
+                    placeholder="Type"
+                    required
+                  />
+          
+                  <input
+                    name="Description"
+                    type="text"
+                    placeholder="Description"
+                    required
+                  />
+                  <input
+                    name="Duration"
+                    type="text"
+                    placeholder="Duration"
+                    required
+                  />
+                  <input
+                    name="Price"
+                    type="text"
+                    placeholder="Price"
+                    required
+                  />
+                  
+                  <button type="submit">Add Service</button>
+            </form>
+
+            
+            
+        </div>
+    </section>
+
+    <section id="clients">
+        <h1>CLIENTS</h1>
+    </section>
+    
+    <section id="vehicles">
+        <h1>VEHICLES</h1>
+    </section>
+
+    <section id="appointments">
+        <h1>APPOINTMENTS</h1>
+    </section>
+
+    
+
+    <section id="clients">
+
+        <div id="clients-modal" class="modal">
+
+            <button onclick="toggleModal('clients-modal')" class="modalbtn">
+                X
+            </button>
+
+            
+            
+        </div>
+
+        <div id="vehicle-modal" class="modal">
+            <button onclick="toggleModal('vehicle-modal')" class="modalbtn">
+                X
+            </button>
+
+            
+        </div>
+
+        <div id="appointments-modal" class="modal">
+          <button onclick="toggleModal('appointments-modal')" class="modalbtn">
+              X
+          </button>
+
+          
+      </div>
+    </section>
+
+    <section id="admin">
+        <div id="add-admin-modal" class="modal">
+            <button onclick="toggleModal('add-admin-modal')" class="modalbtn">
+                X
+            </button>
+
+            <form action="https://qat-motors-api.herokuapp.com/admin" method="POST">
+                REGISTER ADMIN
+                <input
+                  name="Fullname"
+                  type="text"
+                  placeholder="Fullname"
+                  required
+                />
+                <input
+                  name="Username"
+                  type="text"
+                  placeholder="Username"
+                  required
+                />
+                <input
+                  name="Password"
+                  type="text"
+                  placeholder="Password"
+                  required
+                />
+                <button type="submit">Register Admin</button>
+              </form>
+  
+            
+        </div>
+    </section>
+    
+    <!-- scrypts -->
+    <!-- <script src="/scrypts/navbar.js"></script> -->
+    <script src="/scrypts/modal.js"></script>
+    <script src="/scrypts/drop.js"></script>
+    <script src="/scrypts/services.js"></script>
+</body>
+</html>
