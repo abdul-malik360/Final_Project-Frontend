@@ -1,1 +1,0 @@
-console.log("my name is".split('').reverse().join(''))

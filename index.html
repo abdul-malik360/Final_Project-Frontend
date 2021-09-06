@@ -169,11 +169,12 @@
                 X
             </button>
 
-            <form action="https://qat-motors-api.herokuapp.com/client-login" method="GET">
+            <form>
                 LOGIN
                 
                 <label for="Username">Username</label>
                 <input
+                    id="username"
                     name="Username"
                     type="text"
                     placeholder="John1/Jane1"
@@ -182,12 +183,13 @@
     
                 <label for="Password">Password</label>
                 <input
+                    id="password"
                     name="Password"
                     type="text"
                     placeholder="123456/password"
                     required
                 />
-                <button type="submit">LOGIN</button>            
+                <button type="submit" onclick="event.preventDefault(); clientLogin()">LOGIN</button>            
 
             </form>
         </div>
@@ -198,6 +200,7 @@
     <script src="/scrypts/modal.js"></script>
     <script src="/scrypts/drop.js"></script>
     <script src="/scrypts/services.js"></script>
+    <script src="/scrypts/login.js"></script>
 </body>
 </html>
 
