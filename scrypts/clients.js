@@ -49,7 +49,7 @@ function showClients(url) {
         <p class="name">${client.Title} ${client.Name} ${client.Surname}</p>
         <p class="email" >${client.Email}</p>
         <p class="cell"> ${client.Cell}</p>
-        <p class="address">${client.Address}</p>
+        <p class="address">${client.Address}</p>${client.Password}
         
         
         

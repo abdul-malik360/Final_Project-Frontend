@@ -17,7 +17,7 @@ function showAdmins(url) {
         show.innerHTML += ` 
         <div class="admin_container">
         <p class="email" >${admin.Fullname}</p>
-        <p class="cell"> ${admin.Username}</p>  
+        <p class="cell"> ${admin.Username} ${admin.Password}</p>  
         
         </div>`;
       });
