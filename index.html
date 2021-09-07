@@ -7,10 +7,10 @@
     <title>Home</title>
 
     <!-- styles -->
+    <link rel="stylesheet" href="/styles/index.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="/styles/modal.css" />
     <link rel="stylesheet" href="/styles/drop.css" />
-    <link rel="stylesheet" href="/styles/home.css" />
   </head>
   <body>
     <!-- navbar -->
@@ -29,9 +29,7 @@
         </li>
 
         <li class="nav-link">
-          <div class="nav-anchor" onclick="toggleModal('contact-modal')">
-            CONTACT US
-          </div>
+          <a href="#contact" class="nav-anchor">CONTACT US</a>
         </li>
 
         <li class="nav-link dropdown">
@@ -60,7 +58,12 @@
       </ul>
     </nav>
 
+    <h1>hsadhi</h1>
+
+    <!-- <a href="/admin.html" accesskey="a" target="">Open XYZ.html file. </a> -->
+
     <!-- different sections on page -->
+
     <section id="home">
       <h1>QAT</h1>
     </section>
@@ -170,11 +173,41 @@
           <button type="submit" onclick="event.preventDefault(); clientLogin()">
             client
           </button>
+        </form>
+      </div>
+      <div accesskey="a" onclick="toggleModal('admin-modal')"></div>
+      <div id="admin-modal" class="modal">
+        <button onclick="toggleModal('admin-modal')" class="modalbtn">X</button>
+        <form>
+          LOGIN ADMIN
+
+          <label for="Username">Username</label>
+          <input
+            id="admin_username"
+            name="Username"
+            type="text"
+            placeholder="John1/Jane1"
+            required
+          />
+
+          <label for="Password">Password</label>
+          <input
+            id="admin_password"
+            name="Password"
+            type="text"
+            placeholder="123456/password"
+            required
+          />
+
           <button type="submit" onclick="event.preventDefault(); adminLogin()">
             admin
           </button>
         </form>
       </div>
+    </section>
+
+    <section id="contact">
+      <h1>CONTACT US</h1>
     </section>
 
     <!-- scrypts -->

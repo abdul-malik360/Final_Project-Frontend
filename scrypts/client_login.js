@@ -1,7 +1,7 @@
 // client login
 
 const clientLoginURL = "https://qat-motors-api.herokuapp.com/client-login";
-const storage = window.localStorage;
+const client_storage = window.localStorage;
 
 function clientLogin() {
   let username = document.getElementById("username").value;
@@ -25,7 +25,10 @@ function clientLogin() {
       if (json.data == 0) {
         alert("Client does not exist");
       } else {
-        storage.setItem("clients", JSON.stringify(json.data));
+        client_storage.setItem(
+          "username",
+          document.getElementById("username").value
+        );
         window.location = "./client.html";
       }
     });

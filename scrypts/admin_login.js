@@ -1,11 +1,11 @@
 // admin login
 
 const adminLoginURL = "https://qat-motors-api.herokuapp.com/admin-login";
-const storage = window.localStorage;
+const admin_storage = window.localStorage;
 
 function adminLogin() {
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
+  let username = document.getElementById("admin_username").value;
+  let password = document.getElementById("admin_password").value;
 
   console.log(username, password);
 
@@ -25,7 +25,7 @@ function adminLogin() {
       if (json.data == 0) {
         alert("Admin does not exist");
       } else {
-        storage.setItem("admins", JSON.stringify(json.data));
+        admin_storage.setItem("admin", JSON.stringify(json.data));
         window.location = "./admin.html";
       }
     });
