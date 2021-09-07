@@ -55,42 +55,39 @@ showServices(service_url);
 // edit service
 
 function editService() {
-  
-  // get data from form
-  let type = document.querySelector(`#type`).value;
-  let description = document.querySelector(`#description`).value;
-  let duration = document.querySelector(`#duration`).value;
-  let price = document.querySelector(`#price`).value;
+  let type = document.querySelector(`#edit_type`).value;
+  let description = document.querySelector(`#edit_description`).value;
+  let duration = document.querySelector(`#edit_duration`).value;
+  let price = document.querySelector(`#edit_price`).value;
 
   console.log(type, description, duration, price);
 
-  // send data to api
   if (
-    (document.querySelector(`#type`).value.length == 0,
-    document.querySelector(`#description`).value.length == 0,
-    document.querySelector(`#duration`).value.length == 0,
-    document.querySelector(`#price`).value.length == 0)
+    (document.querySelector(`#edit_type`).value.length == 0,
+    document.querySelector(`#edit_description`).value.length == 0,
+    document.querySelector(`#edit_duration`).value.length == 0,
+    document.querySelector(`#edit_price`).value.length == 0)
   ) {
-    alert("input is empty");
+    alert("Please enter details to edit a service");
   } else {
     fetch(
       `https://qat-motors-api.herokuapp.com/service/${type}`,
       {
         method: "PUT",
         body: JSON.stringify({
-          
-          description: description,
-          duration: duration,
-          price: price,
+          Description: description,
+          Duration: duration,
+          Price: price,
         }),
         headers: {
-          "Content-type": "application/json; charset=UTF-8",
+          "Content-type": "application/json",
         },
       }
     )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        window.location.reload();
       });
   }
 }

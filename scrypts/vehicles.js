@@ -1,3 +1,28 @@
+// add vehicle
+
+function addVehicle() {
+  fetch(`https://qat-motors-api.herokuapp.com/vehicle`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      Type: document.getElementById("type").value,
+      Year_Modal: document.getElementById("year_modal").value,
+      VIN_Numb: document.getElementById("vin_numb").value,
+      Reg_Numb: document.getElementById("reg_numb").value,
+      Username: document.getElementById("username").value,
+    }),
+  })
+    .then((response) => response.json)
+    .then((data) => {
+      console.log(data);
+      console.log("success");
+    });
+}
+
+// show vehicles
+
 let vehicles_url = "https://qat-motors-api.herokuapp.com/vehicle";
 
 let vehicles = [];

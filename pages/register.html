@@ -1,122 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <br />
+    <br />
 
-      <br>
-      <br>
-  
-      
+    <br />
+    <br />
 
-    <br>
-    <br>
+    <br />
+    <br />
 
-    <form action="https://qat-motors-api.herokuapp.com/vehicle" method="POST">
-        REGISTER VEHICLE
-        <label for="Type">Vehicle Type</label>
-        <input
-            name="Type"
-            type="text"
-            placeholder="C63"
-            required
-          />
+    <br />
+    <br />
 
-          <label for="Year_Modal">Year Model</label>
-          <input 
-            name="Year_Modal" 
-            type="number" 
-            min="1900" 
-            max="2099" 
-            step="1" 
-            value="2021"
-          />
-          
-          <label for="VIN_Numb">Vin Number</label>
-          <input
-            name="VIN_Numb"
-            type="text"
-            placeholder="4Y1SL65848Z411439"
-            required
-          />
+    <form
+      action="https://qat-motors-api.herokuapp.com/appointments"
+      method="POST"
+    >
+      ADD APPOINTMENT
+      <label for="Reg_Numb">Registration Number</label>
+      <input name="Reg_Numb" type="text" placeholder="CAA 123-456" required />
 
-          <label for="Reg_Numb">Registration Number</label>
-          <input
-            name="Reg_Numb"
-            type="text"
-            placeholder="CAA 123-456"
-            required
-          />
+      <label for="Type">Type of Service</label>
+      <select name="Type">
+        <option value="Minor Service">Minor Service</option>
+        <option value="Major Service">Major Service</option>
+        <option value="Brake Change">Brake Change</option>
+        <option value="Suspension Repair">Suspension Repair</option>
+        <option value="Timing Chain Replacement">
+          Timing Chain Replacement
+        </option>
+        <option value="Electronic Key Repairs">Electronic Key Repairs</option>
+      </select>
 
-          <label for="Username">Username</label>
-          <input
-            name="Username"
-            type="text"
-            placeholder="John1/Jane1"
-            required
-          />
-          <button type="submit">Register Vehicle</button>
+      <label for="Day">Day</label>
+      <input
+        id="date"
+        name="Day"
+        type="date"
+        placeholder="Day"
+        required
+        min="2021-10-01"
+        max="2099-12-31"
+      />
+
+      <label for="Time">Time</label>
+      <input
+        name="Time"
+        type="time"
+        placeholder="Time"
+        required
+        min="09:00"
+        max="18:00"
+      />
+
+      <button type="submit">Add Appointment</button>
     </form>
 
-    <br>
-    <br>
-
-    
-
-    <br>
-    <br>
-
-  <form action="https://qat-motors-api.herokuapp.com/appointments" method="POST">
-    ADD APPOINTMENT
-    <label for="Reg_Numb">Registration Number</label>
-    <input
-        name="Reg_Numb"
-        type="text"
-        placeholder="CAA 123-456"
-        required
-    />
-
-    <label for="Type">Type of Service</label>
-    <select name="Type">
-      <option value="Minor Service">Minor Service</option>
-      <option value="Major Service">Major Service</option>
-      <option value="Brake Change">Brake Change</option>
-      <option value="Suspension Repair">Suspension Repair</option>
-      <option value="Timing Chain Replacement">Timing Chain Replacement</option>
-      <option value="Electronic Key Repairs">Electronic Key Repairs</option>
-      
-    </select>
-
-    <label for="Day">Day</label>
-    <input
-      id="date"
-      name="Day"
-      type="date"
-      placeholder="Day"
-      required
-      min="2021-10-01" 
-      max="2099-12-31"
-      
-    />
-
-    <label for="Time">Time</label>
-    <input
-      name="Time"
-      type="time"
-      placeholder="Time"
-      required
-      min="09:00" 
-      max="18:00"
-    />
-    
-    <button type="submit">Add Appointment</button>
-</form>
-
     <script src="/scrypts/weekend.js"></script>
-</body>
+  </body>
 </html>
