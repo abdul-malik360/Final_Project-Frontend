@@ -97,6 +97,26 @@
       </div>
     </section>
 
+    <section id="contact">
+      <div class="container">
+        <div class="head_box">
+          <h1 class="heading">CONTACT US</h1>
+        </div>
+        <form action="https://formspree.io/f/mzbyyoro" method="POST">
+          <label>
+            Your email:
+            <input type="email" name="_replyto" />
+          </label>
+          <label>
+            Your message:
+            <textarea name="message"></textarea>
+          </label>
+          <!-- your other form fields go here -->
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
     <section id="register-login">
       <div id="reg-client-modal" class="modal">
         <button onclick="toggleModal('reg-client-modal')" class="modalbtn">
@@ -238,26 +258,6 @@
           <button type="submit" onclick="event.preventDefault(); adminLogin()">
             admin
           </button>
-        </form>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="head_box">
-          <h1 class="heading">CONTACT US</h1>
-        </div>
-        <form action="https://formspree.io/f/mzbyyoro" method="POST">
-          <label>
-            Your email:
-            <input type="email" name="_replyto" />
-          </label>
-          <label>
-            Your message:
-            <textarea name="message"></textarea>
-          </label>
-          <!-- your other form fields go here -->
-          <button type="submit">Send</button>
         </form>
       </div>
     </section>
