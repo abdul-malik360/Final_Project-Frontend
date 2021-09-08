@@ -13,8 +13,8 @@ function addClient() {
       Email: document.getElementById("email").value,
       Cell: document.getElementById("cell").value,
       Address: document.getElementById("address").value,
-      Username: document.getElementById("username").value,
-      Password: document.getElementById("password").value,
+      Username: document.getElementById("reg_username").value,
+      Password: document.getElementById("reg_password").value,
     }),
   })
     .then((response) => response.json)

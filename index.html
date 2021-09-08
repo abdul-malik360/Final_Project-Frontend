@@ -58,28 +58,42 @@
       </ul>
     </nav>
 
-    <h1>hsadhi</h1>
-
-    <!-- <a href="/admin.html" accesskey="a" target="">Open XYZ.html file. </a> -->
-
     <!-- different sections on page -->
 
     <section id="home">
-      <h1>QAT</h1>
+      <div class="container">
+        <div class="head_box">
+          <h1 class="heading">QAT</h1>
+          <p class="head_description">Quality Automotive Technician</p>
+        </div>
+        <div class="serv_list_box">
+          <li class="serv_list">
+            Premier Servicing and repairs to all vehicles
+          </li>
+          <li class="serv_list">Engine Rebuilding</li>
+          <li class="serv_list">Diagnostics</li>
+          <li class="serv_list">Fleet Service</li>
+          <li class="serv_list">Mercedes Specialist</li>
+        </div>
+      </div>
     </section>
 
-    <section id="about"></section>
+    <section id="about">
+      <div class="container">
+        <div class="head_box">
+          <h1 class="heading">About US</h1>
+          <p class="head_description">Quality Automotive Technician</p>
+        </div>
+      </div>
+    </section>
 
     <section id="services">
-      <h1>Services</h1>
-      <div class="show_services"></div>
-    </section>
+      <div class="container">
+        <div class="head_box">
+          <h1 class="heading">Services</h1>
 
-    <section id="contact">
-      <div id="contact-modal" class="modal">
-        <button onclick="toggleModal('contact-modal')" class="modalbtn">
-          X
-        </button>
+          <div class="show_services"></div>
+        </div>
       </div>
     </section>
 
@@ -89,19 +103,28 @@
           X
         </button>
 
-        <form
-          action="https://qat-motors-api.herokuapp.com/client"
-          method="POST"
-        >
+        <form class="reg_form">
           REGISTER CLIENT
           <label for="Name">Name</label>
-          <input name="Name" type="text" placeholder="John/Jane" required />
+          <input
+            id="name"
+            name="Name"
+            type="text"
+            placeholder="John/Jane"
+            required
+          />
 
           <label for="Surname">Surname</label>
-          <input name="Surname" type="text" placeholder="Doe" required />
+          <input
+            id="surname"
+            name="Surname"
+            type="text"
+            placeholder="Doe"
+            required
+          />
 
           <label for="Title">Title</label>
-          <select name="Title">
+          <select id="title" name="Title">
             <option value="Mr">Mr</option>
             <option value="Mrs">Mrs</option>
             <option value="Miss">Miss</option>
@@ -109,6 +132,7 @@
 
           <label for="Email">Email Address</label>
           <input
+            id="email"
             name="Email"
             type="email"
             placeholder="john/jane@gmail.com"
@@ -116,10 +140,17 @@
           />
 
           <label for="Cell">Cell Number</label>
-          <input name="Cell" type="text" placeholder="0723524585" required />
+          <input
+            id="cell"
+            name="Cell"
+            type="text"
+            placeholder="0723524585"
+            required
+          />
 
           <label for="Address">Home Address</label>
           <input
+            id="address"
             name="Address"
             type="text"
             placeholder="No. Street Name, Area, Suburb"
@@ -128,6 +159,7 @@
 
           <label for="Username">Username</label>
           <input
+            id="reg_username"
             name="Username"
             type="text"
             placeholder="John1/Jane1"
@@ -136,12 +168,15 @@
 
           <label for="Password">Password</label>
           <input
+            id="reg_password"
             name="Password"
             type="text"
             placeholder="123456/password"
             required
           />
-          <button type="submit">Register Client</button>
+          <button onclick="event.preventDefault(), addClient()">
+            Register Client
+          </button>
         </form>
       </div>
 
@@ -171,10 +206,11 @@
             required
           />
           <button type="submit" onclick="event.preventDefault(); clientLogin()">
-            client
+            Login
           </button>
         </form>
       </div>
+
       <div accesskey="a" onclick="toggleModal('admin-modal')"></div>
       <div id="admin-modal" class="modal">
         <button onclick="toggleModal('admin-modal')" class="modalbtn">X</button>
@@ -207,15 +243,37 @@
     </section>
 
     <section id="contact">
-      <h1>CONTACT US</h1>
+      <div class="container">
+        <div class="head_box">
+          <h1 class="heading">CONTACT US</h1>
+        </div>
+        <form action="https://formspree.io/f/mzbyyoro" method="POST">
+          <label>
+            Your email:
+            <input type="email" name="_replyto" />
+          </label>
+          <label>
+            Your message:
+            <textarea name="message"></textarea>
+          </label>
+          <!-- your other form fields go here -->
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </section>
+
+    <footer>
+      <div class="footer_container"></div>
+    </footer>
 
     <!-- scrypts -->
     <!-- <script src="/scrypts/navbar.js"></script> -->
+    <script src="/scrypts/add_client.js"></script>
     <script src="/scrypts/modal.js"></script>
     <script src="/scrypts/drop.js"></script>
     <script src="/scrypts/services.js"></script>
     <script src="/scrypts/client_login.js"></script>
     <script src="/scrypts/admin_login.js"></script>
+    <script src="/scrypts/alert.js"></script>
   </body>
 </html>

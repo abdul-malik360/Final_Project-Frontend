@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="/styles/modal.css" />
     <link rel="stylesheet" href="/styles/drop.css" />
-    <link rel="stylesheet" href="/styles/home.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
   </head>
   <body>
     <!-- navbar -->
@@ -29,9 +29,7 @@
         </li>
 
         <li class="nav-link">
-          <div class="nav-anchor" onclick="toggleModal('contact-modal')">
-            CONTACT US
-          </div>
+          <a href="#contact" class="nav-anchor">CONTACT US</a>
         </li>
 
         <li class="nav-link dropdown">
@@ -58,9 +56,17 @@
             <a
               href="#"
               class="drop-link"
-              onclick="toggleModal('appointments-modal')"
+              onclick="toggleModal('view-appointments-modal')"
               >Appoinments</a
             >
+
+            <a
+              href="#"
+              class="drop-link"
+              onclick="toggleModal('book-appointments-modal')"
+              >Book Appoinment</a
+            >
+
             <a href="/index.html" class="drop-link">Log Out</a>
           </div>
         </li>
@@ -69,21 +75,39 @@
 
     <!-- different sections on page -->
     <section id="home">
-      <h1>QAT</h1>
+      <div class="container">
+        <div class="head_box">
+          <h1 class="heading">QAT</h1>
+          <p class="head_description">Quality Automotive Technician</p>
+        </div>
+        <div class="serv_list_box">
+          <li class="serv_list">
+            Premier Servicing and repairs to all vehicles
+          </li>
+          <li class="serv_list">Engine Rebuilding</li>
+          <li class="serv_list">Diagnostics</li>
+          <li class="serv_list">Fleet Service</li>
+          <li class="serv_list">Mercedes Specialist</li>
+        </div>
+      </div>
     </section>
 
-    <section id="about"></section>
+    <section id="about">
+      <div class="container">
+        <div class="head_box">
+          <h1 class="heading">About US</h1>
+          <p class="head_description">Quality Automotive Technician</p>
+        </div>
+      </div>
+    </section>
 
     <section id="services">
-      <h1>Services</h1>
-      <div class="show_services"></div>
-    </section>
+      <div class="container">
+        <div class="head_box">
+          <h1 class="heading">Services</h1>
 
-    <section id="contact">
-      <div id="contact-modal" class="modal">
-        <button onclick="toggleModal('contact-modal')" class="modalbtn">
-          X
-        </button>
+          <div class="show_services"></div>
+        </div>
       </div>
     </section>
 
@@ -155,12 +179,88 @@
         </form>
       </div>
 
-      <div id="appointments-modal" class="modal">
-        <button onclick="toggleModal('appointments-modal')" class="modalbtn">
+      <div id="view-appointments-modal" class="modal">
+        <button
+          onclick="toggleModal('view-appointments-modal')"
+          class="modalbtn"
+        >
           X
         </button>
       </div>
+
+      <div id="book-appointments-modal" class="modal">
+        <button
+          onclick="toggleModal('book-appointments-modal')"
+          class="modalbtn"
+        >
+          X
+        </button>
+        <form
+          action="https://qat-motors-api.herokuapp.com/appointments"
+          method="POST"
+        >
+          ADD APPOINTMENT
+          <label for="Reg_Numb">Registration Number</label>
+          <input
+            name="Reg_Numb"
+            type="text"
+            placeholder="CAA 123-456"
+            required
+          />
+
+          <label for="Type">Type of Service</label>
+
+          <select class="show_service_type" name="Type"></select>
+
+          <label for="Day">Day</label>
+          <input
+            id="date"
+            name="Day"
+            type="date"
+            placeholder="Day"
+            required
+            min="2021-10-01"
+            max="2099-12-31"
+          />
+
+          <label for="Time">Time</label>
+          <input
+            name="Time"
+            type="time"
+            placeholder="Time"
+            required
+            min="09:00"
+            max="18:00"
+          />
+
+          <button type="submit">Add Appointment</button>
+        </form>
+      </div>
     </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="head_box">
+          <h1 class="heading">CONTACT US</h1>
+        </div>
+        <form action="https://formspree.io/f/mzbyyoro" method="POST">
+          <label>
+            Your email:
+            <input type="email" name="_replyto" />
+          </label>
+          <label>
+            Your message:
+            <textarea name="message"></textarea>
+          </label>
+          <!-- your other form fields go here -->
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer_container"></div>
+    </footer>
 
     <!-- scrypts -->
     <!-- <script src="/scrypts/navbar.js"></script> -->
@@ -170,5 +270,6 @@
     <script src="/scrypts/view_client.js"></script>
     <script src="/scrypts/view_vehicle.js"></script>
     <script src="/scrypts/vehicles.js"></script>
+    <script src="/scrypts/weekend.js"></script>
   </body>
 </html>
