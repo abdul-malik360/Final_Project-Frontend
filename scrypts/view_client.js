@@ -15,18 +15,17 @@ fetch(
   .then((res) => res.json())
   .then((data) => {
     console.log(data);
-    console.log(data["data"][1]);
-    document.querySelector(
-      ".first-name"
-    ).innerHTML = `First Name: ${data["data"][1]}`;
-    document.querySelector(
-      ".surname"
-    ).innerHTML = `Surname: ${data["data"][2]}`;
-    document.querySelector(
-      ".address"
-    ).innerHTML = `Address: ${data["data"][3]}`;
-    document.querySelector(".email").innerHTML = `Email: ${data["data"][4]}`;
-    document.querySelector(
-      ".username"
-    ).innerHTML = `Username: ${data["data"][5]}`;
+
+    let client = data.data;
+
+    console.log(client[0]);
+
+    document.getElementById(
+      "client_details"
+    ).innerHTML = `First Name: ${client[0]}
+    Surname: ${client[2]} ${client[1]}
+    Cell: ${client[4]}
+    Address: ${client[5]}
+    Email: ${client[3]}
+    Username: ${client[6]}`;
   });

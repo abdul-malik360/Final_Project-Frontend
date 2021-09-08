@@ -52,6 +52,12 @@
             <a
               href="#"
               class="drop-link"
+              onclick="toggleModal('reg-vehicle-modal')"
+              >Reg new Vehicle</a
+            >
+            <a
+              href="#"
+              class="drop-link"
               onclick="toggleModal('appointments-modal')"
               >Appoinments</a
             >
@@ -87,18 +93,66 @@
           X
         </button>
 
-        <p class="first-name"></p>
-        <p class="surname"></p>
-        <p class="address"></p>
-        <p class="email"></p>
-        <p class="username"></p>
-        <p class="password"></p>
+        <p id="client_details"></p>
       </div>
 
       <div id="vehicle-modal" class="modal">
         <button onclick="toggleModal('vehicle-modal')" class="modalbtn">
           X
         </button>
+        <p id="client_vehicle_details"></p>
+      </div>
+
+      <div id="reg-vehicle-modal" class="modal">
+        <button onclick="toggleModal('reg-vehicle-modal')" class="modalbtn">
+          X
+        </button>
+        <form>
+          REGISTER VEHICLE
+          <label for="Type">Vehicle Type</label>
+          <input id="type" name="Type" type="text" placeholder="C63" required />
+
+          <label for="Year_Modal">Year Model</label>
+          <input
+            id="year_modal"
+            name="Year_Modal"
+            type="number"
+            min="1900"
+            max="2099"
+            step="1"
+            value="2021"
+          />
+
+          <label for="VIN_Numb">Vin Number</label>
+          <input
+            id="vin_numb"
+            name="VIN_Numb"
+            type="text"
+            placeholder="4Y1SL65848Z411439"
+            required
+          />
+
+          <label for="Reg_Numb">Registration Number</label>
+          <input
+            id="reg_numb"
+            name="Reg_Numb"
+            type="text"
+            placeholder="CAA 123-456"
+            required
+          />
+
+          <label for="Username">Username</label>
+          <input
+            id="username"
+            name="Username"
+            type="text"
+            placeholder="John1/Jane1"
+            required
+          />
+          <button onclick="event.preventDefault(), addVehicle()">
+            Register Vehicle
+          </button>
+        </form>
       </div>
 
       <div id="appointments-modal" class="modal">
@@ -114,5 +168,7 @@
     <script src="/scrypts/drop.js"></script>
     <script src="/scrypts/services.js"></script>
     <script src="/scrypts/view_client.js"></script>
+    <script src="/scrypts/view_vehicle.js"></script>
+    <script src="/scrypts/vehicles.js"></script>
   </body>
 </html>
