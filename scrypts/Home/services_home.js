@@ -1,32 +1,39 @@
-// show services
+// when the person click on the book service button on the home page
+// this function happens
 
-let service_url = "https://qat-motors-api.herokuapp.com/service";
+// function servicefirstLogin() {
+//   alert("Login/Register to book a Service");
+// }
 
-let services = [];
+// // show services
 
-function showServices(url) {
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
+// let service_url = "https://qat-motors-api.herokuapp.com/service";
 
-      let services = data.data;
+// let services = [];
 
-      let show = document.querySelector(".show_services");
+// function showServices(url) {
+//   fetch(url)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log(data);
 
-      services.forEach((service) => {
-        console.log(service);
-        show.innerHTML += ` 
-        <div class="service_container">
-        <h1 class="name"> <span class="serv_numb">${service.Service_Numb}.</span> ${service.Type}</h1>
-        <p class="description" >${service.Description}</p>
-        <h2 class="duration"> ${service.Duration}</h2>
-        <h3 class="price">R ${service.Price}</h3>            
-        </div>`;
-      });
-    });
-}
+//       let services = data.data;
 
-// onclick="bookService(${service.Service_Numb})"
+//       let show = document.querySelector(".show_services");
 
-showServices(service_url);
+//       services.forEach((service) => {
+//         console.log(service);
+//         show.innerHTML += `
+//         <div class="service_container">
+//         <h1 class="name"> <span class="serv_numb">${service.Service_Numb}.</span> ${service.Type}</h1>
+//         <p class="description" >${service.Description}</p>
+//         <h2 class="duration"> ${service.Duration}</h2>
+//         <h3 class="price">R ${service.Price}</h3>
+//         </div>`;
+//       });
+//     });
+// }
+
+// // onclick="bookService(${service.Service_Numb})"
+
+// showServices(service_url);

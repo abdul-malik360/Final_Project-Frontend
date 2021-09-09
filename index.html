@@ -7,8 +7,9 @@
     <title>Home</title>
 
     <!-- styles -->
-    <link rel="stylesheet" href="/styles/Home/body.css" />
     <link rel="stylesheet" href="/styles/Home/navbar.css" />
+    <link rel="stylesheet" href="/styles/Home/body.css" />
+    <link rel="stylesheet" href="/styles/Home/home.css" />
   </head>
   <body>
     <!-- navbar -->
@@ -24,6 +25,10 @@
 
         <li>
           <a href="#services" class="nav-link">Our Services</a>
+        </li>
+
+        <li>
+          <a href="#reviews" class="nav-link">Reviews</a>
         </li>
 
         <li>
@@ -59,7 +64,6 @@
     <!-- different sections on page -->
 
     <!-- register/login -->
-
     <section id="nav">
       <!-- client register -->
       <div id="reg-client-modal" class="modal">
@@ -143,7 +147,10 @@
             placeholder="123456/password"
             required
           />
-          <button class="regbtn" onclick="event.preventDefault(), addClient()">
+          <button
+            class="regbtn"
+            onclick="event.preventDefault(), addClientHome()"
+          >
             Register
           </button>
         </form>
@@ -211,10 +218,9 @@
           <button class="forgotbtn" type="submit">Get Password</button>
         </form>
       </div>
-      <!-- admin login -->
-
       <!-- pressing alt and a toggles the admin modal -->
       <div accesskey="a" onclick="regLogModal('admin-modal')"></div>
+      <!-- admin login -->
       <div id="admin-modal" class="modal">
         <button onclick="regLogModal('admin-modal')" class="adminmodalbtn">
           X
@@ -255,47 +261,66 @@
 
     <!-- Landing Page -->
     <section id="home">
-      <div class="container">
-        <div class="head_box">
-          <h1 class="heading">QAT</h1>
-          <p class="head_description">Quality Automotive Technician</p>
+      <div class="home_container">
+        <div class="home_head_box">
+          <h1 class="home_heading">QAT</h1>
+          <p class="home_head_description">Quality Automotive Technician</p>
         </div>
         <div class="serv_list_box">
-          <li class="serv_list">
-            Premier Servicing and repairs to all vehicles
-          </li>
-          <li class="serv_list">Engine Rebuilding</li>
-          <li class="serv_list">Diagnostics</li>
-          <li class="serv_list">Fleet Service</li>
-          <li class="serv_list">Mercedes Specialist</li>
+          <li class="serv_list premier">Premier Servicing</li>
+          <li class="serv_list repair">Repairs to All Vehicles</li>
+          <li class="serv_list engine">Engine Rebuilding</li>
+          <li class="serv_list diagnostic">Diagnostics</li>
+          <li class="serv_list fleet">Fleet Service</li>
+          <li class="serv_list merc">Mercedes Specialist</li>
+          <button class="bookbtn" onclick="servicefirstLogin(); ">
+            Use Our Service
+          </button>
         </div>
-        <div>
-          <p>Location: Colorado Park, Mitchell's Plain</p>
+      </div>
+      <div class="home_info">
+        <div class="our_word">
+          <h2 class="slogan">Expect Quality, Expect the best</h2>
+          <p class="moto">
+            Our Goal is to Deliver Quality and Guarentee, No Comebacks!
+          </p>
         </div>
       </div>
     </section>
 
+    <!-- About Page -->
     <section id="about">
       <div class="container">
         <div class="head_box">
           <h1 class="heading">About US</h1>
+          <p class="location">Location: Colorado Park, Mitchell's Plain</p>
           <p class="head_description">Quality Automotive Technician</p>
         </div>
       </div>
     </section>
-
+    <!-- Services Page -->
     <section id="services">
       <div class="container">
         <div class="head_box">
           <h1 class="heading">Services</h1>
-          <button onclick="regLogDropBox('home-drop-list'); firstLogin(); ">
-            Book Now!
-          </button>
+          <button onclick="servicefirstLogin(); ">Book Now!</button>
         </div>
         <div class="show_services"></div>
       </div>
     </section>
 
+    <!-- Reviews Page -->
+    <section id="reviews">
+      <div class="container">
+        <div class="head_box">
+          <h1 class="heading">Reviews</h1>
+          <button onclick="reviewfirstLogin(); ">Add Review</button>
+        </div>
+        <div class="show_reviews"></div>
+      </div>
+    </section>
+
+    <!-- Contact Page -->
     <section id="contact">
       <div class="container">
         <div class="head_box">
@@ -316,16 +341,16 @@
       </div>
     </section>
 
+    <!-- footer -->
     <footer>
       <div class="footer_container"></div>
     </footer>
 
     <!-- scrypts -->
-
     <script src="/scrypts/Home/navbar_home.js"></script>
-    regLogModal
-    <script src="/scrypts/Home/scrypt_home.js"></script>
-    <script src="/scrypts/Home/services_home.js"></script>
+    <script src="/scrypts/Home/reg_client_home.js"></script>
+    <script src="/scrypts/Home/login_client_home.js"></script>
+    <script src="/scrypts/Home/login_admin_home.js"></script>
 
     <!-- scrypts -->
     <!-- <script src="/scrypts/navbar.js"></script> -->

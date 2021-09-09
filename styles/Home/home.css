@@ -1,12 +1,138 @@
 #home {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
   background-image: url(/images/pic\ 2.jpg), radial-gradient(#bdc3c7, #2c3e50);
   background-blend-mode: soft-light;
   background-size: cover;
   background-attachment: fixed;
+
   height: 95vh;
   margin-bottom: 50px;
+}
+
+.home_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 50px;
+}
+
+.home_head_box {
+  margin: 50px;
+  text-shadow: 5px 5px 5px black;
+}
+
+.home_heading {
+  font-size: 100px;
+  margin-top: 50px;
+  color: white;
+}
+
+.home_head_description {
+  font-size: 50px;
+  color: white;
+}
+
+.serv_list_box {
+  margin: 50px;
+}
+
+.bookbtn {
+  width: 100%;
+  background: transparent;
+  border: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+.bookbtn:hover {
+  color: white;
+  background-color: black;
+  border-radius: 50px;
+}
+.serv_list {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px;
+  color: white;
+  border-bottom: solid 1px white;
+}
+.serv_list:hover {
+  border-bottom: solid 1px black;
+  color: black;
+  cursor: pointer;
+}
+
+.serv_list:hover {
+  position: relative;
+}
+.premier:hover:after {
+  content: url(/images/premier\ service.jpeg);
+  display: block;
+  position: fixed;
+  left: 40%;
+  top: 20%;
+  transition: 0.6s;
+}
+.repair:hover:after {
+  content: url(/images/all\ merc.jpeg);
+  display: block;
+  position: fixed;
+  left: 40%;
+  top: 20%;
+  transition: 0.6s;
+}
+
+.engine:hover:after {
+  content: url(/images/engine.jpeg);
+  display: block;
+  position: fixed;
+  left: 40%;
+  top: 20%;
+  transition: 0.6s;
+}
+
+.diagnostic:hover:after {
+  content: url(/images/diagnostics.jpeg);
+  display: block;
+  position: fixed;
+  left: 40%;
+  top: 20%;
+  transition: 0.6s;
+}
+
+.fleet:hover:after {
+  content: url(/images/fleet.jpeg);
+  display: block;
+  position: fixed;
+  left: 40%;
+  top: 20%;
+  transition: 0.6s;
+}
+
+.merc:hover:after {
+  content: url(/images/merc\ benz.jpeg);
+  display: block;
+  position: fixed;
+  left: 40%;
+  top: 20%;
+  transition: 0.6s;
+}
+
+.home_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.our_word {
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.slogan {
+  font-size: 30px;
+}
+
+.moto {
+  font-size: 25px;
 }

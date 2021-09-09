@@ -16,19 +16,3 @@
 .head_description {
   font-size: 50px;
 }
-
-#reg-client-modal {
-  background-image: url(/images/mechanic.png), radial-gradient(#bdc3c7, #2c3e50);
-  background-blend-mode: soft-light;
-  background-size: contain;
-  background-attachment: fixed;
-}
-
-.reg_form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
-  margin: 50px;
-  width: 50%;
-}
