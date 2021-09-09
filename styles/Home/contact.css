@@ -1,0 +1,12 @@
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-image: url(/images/pic4.jpg), radial-gradient(#bdc3c7, #2c3e50);
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 90vh;
+  margin-bottom: 50px;
+}

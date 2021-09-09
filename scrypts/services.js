@@ -164,6 +164,3 @@ function deleteService() {
 //     alert("Login before booking");
 //   }
 // }
-function firstLogin(modalID) {
-  document.getElementById(modalID).classList.toggle("active");
-}

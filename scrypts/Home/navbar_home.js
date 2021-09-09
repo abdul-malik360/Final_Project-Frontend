@@ -1,5 +1,5 @@
-// when you click on the drop div, the list appears
-function toggleDropBox(dropID) {
+// when you click on My Account, register or login appears
+function regLogDropBox(dropID) {
   document.getElementById(dropID).classList.toggle("show-drop");
 }
 
@@ -16,3 +16,8 @@ window.onclick = function (event) {
     }
   }
 };
+
+// when you click on register or login, this modal apears
+function regLogModal(modalID) {
+  document.getElementById(modalID).classList.toggle("active");
+}
