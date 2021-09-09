@@ -17,8 +17,9 @@ function showServices(url) {
       services.forEach((service) => {
         console.log(service);
         show.innerHTML += `
+        
         <div class="service_container">
-        <h1 class="name"> <span class="serv_numb">${service.Service_Numb}.</span> ${service.Type}</h1>
+        <h1 class="service_name"> <span class="serv_numb">${service.Service_Numb}.</span> ${service.Type}</h1>
         <p class="description" >${service.Description}</p>
         <h2 class="duration"> ${service.Duration}</h2>
         <h3 class="price">R ${service.Price}</h3>
