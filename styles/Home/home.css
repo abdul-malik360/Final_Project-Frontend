@@ -38,12 +38,13 @@
 .bookbtn {
   width: 100%;
   background: transparent;
-  border: transparent;
+  border: none;
+  border-bottom: 2px solid white;
   font-size: 20px;
   cursor: pointer;
+  color: white;
 }
 .bookbtn:hover {
-  color: white;
   background-color: black;
   border-radius: 50px;
 }

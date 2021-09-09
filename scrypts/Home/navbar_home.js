@@ -21,3 +21,7 @@ window.onclick = function (event) {
 function regLogModal(modalID) {
   document.getElementById(modalID).classList.toggle("active");
 }
+
+function servicefirstLogin() {
+  alert("Login/Register to book a Service");
+}
