@@ -58,20 +58,20 @@
 
     <!-- different sections on page -->
 
-    <!-- Landing Page -->
+    <!-- register/login -->
 
     <section id="nav">
+      <!-- client register -->
       <div id="reg-client-modal" class="modal">
-        <button onclick="regLogModal('reg-client-modal')" class="modalbtn">
+        <button onclick="regLogModal('reg-client-modal')" class="regmodalbtn">
           X
         </button>
-
         <form class="reg_form">
-          REGISTER CLIENT
           <label for="Name">Name</label>
           <input
             id="name"
             name="Name"
+            class="reginput"
             type="text"
             placeholder="John/Jane"
             required
@@ -81,13 +81,14 @@
           <input
             id="surname"
             name="Surname"
+            class="reginput"
             type="text"
             placeholder="Doe"
             required
           />
 
           <label for="Title">Title</label>
-          <select id="title" name="Title">
+          <select id="title" name="Title" class="reginput">
             <option value="Mr">Mr</option>
             <option value="Mrs">Mrs</option>
             <option value="Miss">Miss</option>
@@ -97,6 +98,7 @@
           <input
             id="email"
             name="Email"
+            class="reginput"
             type="email"
             placeholder="john/jane@gmail.com"
             required
@@ -106,6 +108,7 @@
           <input
             id="cell"
             name="Cell"
+            class="reginput"
             type="text"
             placeholder="0723524585"
             required
@@ -115,6 +118,7 @@
           <input
             id="address"
             name="Address"
+            class="reginput"
             type="text"
             placeholder="No. Street Name, Area, Suburb"
             required
@@ -124,6 +128,38 @@
           <input
             id="reg_username"
             name="Username"
+            class="reginput"
+            type="text"
+            placeholder="John1/Jane1"
+            required
+          />
+
+          <label class="reglabel" for="Password">Password</label>
+          <input
+            id="reg_password"
+            name="Password"
+            class="reginput"
+            type="text"
+            placeholder="123456/password"
+            required
+          />
+          <button class="regbtn" onclick="event.preventDefault(), addClient()">
+            Register
+          </button>
+        </form>
+      </div>
+      <!-- client login -->
+      <div id="log-client-modal" class="modal">
+        <button onclick="regLogModal('log-client-modal')" class="logmodalbtn">
+          X
+        </button>
+
+        <form class="log_form">
+          <label for="Username">Username</label>
+          <input
+            id="username"
+            name="Username"
+            class="loginput"
             type="text"
             placeholder="John1/Jane1"
             required
@@ -131,19 +167,88 @@
 
           <label for="Password">Password</label>
           <input
-            id="reg_password"
+            id="password"
             name="Password"
+            class="loginput"
             type="text"
             placeholder="123456/password"
             required
           />
-          <button onclick="event.preventDefault(), addClient()">
-            Register Client
+          <button
+            class="logbtn"
+            type="submit"
+            onclick="event.preventDefault(); clientLogin()"
+          >
+            Login
+          </button>
+          <button onclick="regLogModal('forgot-modal')" class="forgotbtn">
+            Forgot Password?
+          </button>
+        </form>
+      </div>
+      <!-- client forgot password -->
+      <div id="forgot-modal" class="modal">
+        <button onclick="regLogModal('forgot-modal')" class="forgotmodalbtn">
+          X
+        </button>
+        <form
+          class="forgot_form"
+          action="https://qat-motors-api.herokuapp.com/recovery"
+          method="POST"
+        >
+          <h3 class="forgothead">Enter your Email</h3>
+          <input
+            name="Email"
+            id="email"
+            class="forgotinput"
+            type="email"
+            placeholder="john/jane@gmail.com"
+            required
+          />
+          <button class="forgotbtn" type="submit">Get Password</button>
+        </form>
+      </div>
+      <!-- admin login -->
+      <div accesskey="a" onclick="regLogModal('admin-modal')"></div>
+      <div id="admin-modal" class="modal">
+        <button onclick="regLogModal('admin-modal')" class="adminmodalbtn">
+          X
+        </button>
+
+        <form class="admin_form">
+          <h3 class="adminhead">ADMIN</h3>
+          <label for="Username">Username</label>
+          <input
+            id="admin_username"
+            name="Username"
+            class="admininput"
+            type="text"
+            placeholder="John1/Jane1"
+            required
+          />
+
+          <label for="Password">Password</label>
+          <input
+            id="admin_password"
+            name="Password"
+            class="admininput"
+            type="text"
+            placeholder="123456/password"
+            required
+          />
+
+          <button
+            class="adminbtn"
+            type="submit"
+            onclick="event.preventDefault(); adminLogin()"
+          >
+            Login
           </button>
         </form>
       </div>
     </section>
 
+    <!-- Landing Page -->
     <section id="home">
       <div class="container">
         <div class="head_box">
@@ -202,69 +307,6 @@
           </label>
           <!-- your other form fields go here -->
           <button type="submit">Send</button>
-        </form>
-      </div>
-    </section>
-
-    <section id="register-login">
-      <div id="log-client-modal" class="modal">
-        <button onclick="toggleModal('log-client-modal')" class="modalbtn">
-          X
-        </button>
-
-        <form>
-          LOGIN
-
-          <label for="Username">Username</label>
-          <input
-            id="username"
-            name="Username"
-            type="text"
-            placeholder="John1/Jane1"
-            required
-          />
-
-          <label for="Password">Password</label>
-          <input
-            id="password"
-            name="Password"
-            type="text"
-            placeholder="123456/password"
-            required
-          />
-          <button type="submit" onclick="event.preventDefault(); clientLogin()">
-            Login
-          </button>
-        </form>
-      </div>
-
-      <div accesskey="a" onclick="toggleModal('admin-modal')"></div>
-      <div id="admin-modal" class="modal">
-        <button onclick="toggleModal('admin-modal')" class="modalbtn">X</button>
-        <form>
-          LOGIN ADMIN
-
-          <label for="Username">Username</label>
-          <input
-            id="admin_username"
-            name="Username"
-            type="text"
-            placeholder="John1/Jane1"
-            required
-          />
-
-          <label for="Password">Password</label>
-          <input
-            id="admin_password"
-            name="Password"
-            type="text"
-            placeholder="123456/password"
-            required
-          />
-
-          <button type="submit" onclick="event.preventDefault(); adminLogin()">
-            admin
-          </button>
         </form>
       </div>
     </section>

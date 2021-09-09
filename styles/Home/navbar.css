@@ -68,6 +68,7 @@
   display: flex;
   justify-content: center;
 }
+/* register modal */
 
 #reg-client-modal {
   display: none;
@@ -75,25 +76,253 @@
 
 #reg-client-modal.active {
   display: flex;
+  flex-direction: row-reverse;
   flex: 1 1 200px;
   flex: 0 1 200px;
 
-  height: 70%;
-  width: 30vw;
-
   position: fixed;
-  left: 50;
-  bottom: 50;
+
+  height: 70%;
+  width: 30%;
 
   margin-top: 100px;
-  padding: 50px;
+  padding: 20px;
 
   background-color: #e3efe8;
   background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
-  border: solid black 2px;
+}
+
+.regmodalbtn {
+  position: fixed;
+  font-size: 40px;
+
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: transparent;
+
+  transition: 0.3s;
+}
+
+.regmodalbtn:hover {
+  color: red;
 }
 
 .reg_form {
   display: flex;
   flex-direction: column;
+  align-self: center;
+  margin-right: 100px;
+}
+.reginput {
+  margin-bottom: 10px;
+}
+
+.regbtn {
+  margin: 10px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: 0.3s;
+}
+
+.regbtn:hover {
+  color: white;
+}
+
+/* login modal */
+
+#log-client-modal {
+  display: none;
+}
+
+#log-client-modal.active {
+  display: flex;
+  flex-direction: row-reverse;
+  flex: 1 1 200px;
+  flex: 0 1 200px;
+
+  position: fixed;
+
+  height: 70%;
+  width: 30%;
+
+  margin-top: 100px;
+  padding: 20px;
+
+  background-color: #e3efe8;
+  background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
+}
+
+.log_form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-right: 100px;
+}
+
+.loginput {
+  margin-bottom: 10px;
+}
+
+.logmodalbtn {
+  position: fixed;
+  font-size: 40px;
+
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: transparent;
+
+  transition: 0.3s;
+}
+
+.logmodalbtn:hover {
+  color: red;
+}
+
+.logbtn {
+  margin: 10px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: 0.3s;
+}
+
+.logbtn:hover {
+  color: white;
+}
+
+.forgotbtn {
+  background: transparent;
+  border: none;
+}
+
+.forgotbtn:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* forgot password modal */
+
+#forgot-modal {
+  display: none;
+}
+
+#forgot-modal.active {
+  display: flex;
+  flex-direction: row-reverse;
+  flex: 1 1 200px;
+  flex: 0 1 200px;
+
+  position: fixed;
+
+  height: 70%;
+  width: 30%;
+
+  margin-top: 100px;
+  padding: 20px;
+
+  background-color: #e3efe8;
+  background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
+}
+
+.forgot_form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-right: 100px;
+}
+
+.forgothead {
+  margin: 20px;
+}
+
+.forgotmodalbtn {
+  position: fixed;
+  font-size: 40px;
+
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: transparent;
+
+  transition: 0.3s;
+}
+
+.forgotmodalbtn:hover {
+  color: red;
+}
+
+.forgotinput {
+  margin-bottom: 20px;
+}
+
+#admin-modal {
+  display: none;
+}
+
+#admin-modal.active {
+  display: flex;
+  flex-direction: row-reverse;
+  flex: 1 1 200px;
+  flex: 0 1 200px;
+
+  position: fixed;
+
+  height: 70%;
+  width: 30%;
+
+  margin-top: 100px;
+  padding: 20px;
+
+  background-color: #e3efe8;
+  background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
+}
+
+.admin_form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-right: 100px;
+}
+
+.admininput {
+  margin-bottom: 10px;
+}
+
+.adminmodalbtn {
+  position: fixed;
+  font-size: 40px;
+
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: transparent;
+
+  transition: 0.3s;
+}
+
+.adminmodalbtn:hover {
+  color: red;
+}
+
+.adminbtn {
+  margin: 10px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: 0.3s;
+}
+
+.adminbtn:hover {
+  color: white;
+}
+
+.adminhead {
+  margin: 20px;
 }
