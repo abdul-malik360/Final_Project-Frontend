@@ -96,7 +96,7 @@
 
           <label for="Email">Email Address</label>
           <input
-            id="email"
+            id="reg_email"
             name="Email"
             class="reginput"
             type="email"
@@ -157,7 +157,7 @@
         <form class="log_form">
           <label for="Username">Username</label>
           <input
-            id="username"
+            id="log_client_username"
             name="Username"
             class="loginput"
             type="text"
@@ -167,7 +167,7 @@
 
           <label for="Password">Password</label>
           <input
-            id="password"
+            id="log_client_password"
             name="Password"
             class="loginput"
             type="text"
@@ -181,7 +181,10 @@
           >
             Login
           </button>
-          <button onclick="regLogModal('forgot-modal')" class="forgotbtn">
+          <button
+            onclick="event.preventDefault(), regLogModal('forgot-modal')"
+            class="forgotbtn"
+          >
             Forgot Password?
           </button>
         </form>
@@ -199,7 +202,7 @@
           <h3 class="forgothead">Enter your Email</h3>
           <input
             name="Email"
-            id="email"
+            id="forgot_email"
             class="forgotinput"
             type="email"
             placeholder="john/jane@gmail.com"
@@ -209,6 +212,8 @@
         </form>
       </div>
       <!-- admin login -->
+
+      <!-- pressing alt and a toggles the admin modal -->
       <div accesskey="a" onclick="regLogModal('admin-modal')"></div>
       <div id="admin-modal" class="modal">
         <button onclick="regLogModal('admin-modal')" class="adminmodalbtn">
