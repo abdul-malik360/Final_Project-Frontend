@@ -1,0 +1,189 @@
+/* navbar */
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+
+  height: 50px;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 50px;
+
+  font-family: sans-serif;
+  list-style-type: none;
+  text-transform: uppercase;
+  gap: 20px;
+
+  background-color: #b8c6db;
+  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav-link:hover {
+  border-bottom: 1px solid black;
+}
+
+/* drop list */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.drop-link {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.drop-link:hover {
+  background-color: #b8c6db;
+}
+
+.show-drop {
+  display: block;
+}
+
+/* modal */
+
+#nav {
+  display: flex;
+  justify-content: center;
+}
+
+/* profile */
+
+#profile-modal {
+  display: none;
+}
+
+#profile-modal.active {
+  display: flex;
+  flex-direction: row-reverse;
+  flex: 1 1 200px;
+  flex: 0 1 200px;
+
+  position: fixed;
+
+  height: 70%;
+  width: 30%;
+
+  margin-top: 100px;
+  padding: 20px;
+
+  background-color: #e3efe8;
+  background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
+}
+.profilemodalbtn {
+  position: fixed;
+  font-size: 40px;
+
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: transparent;
+
+  transition: 0.3s;
+}
+
+.profilemodalbtn:hover {
+  color: red;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-right: 100px;
+}
+.client_details {
+  gap: 20px;
+}
+
+/* vehicle */
+
+#vehicle-modal {
+  display: none;
+}
+
+#vehicle-modal.active {
+  display: flex;
+  flex-direction: row-reverse;
+  flex: 1 1 200px;
+  flex: 0 1 200px;
+
+  position: fixed;
+
+  height: 70%;
+  width: 30%;
+
+  margin-top: 100px;
+  padding: 20px;
+
+  background-color: #e3efe8;
+  background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
+}
+.vehiclemodalbtn {
+  position: fixed;
+  font-size: 40px;
+
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: transparent;
+
+  transition: 0.3s;
+}
+
+.vehiclemodalbtn:hover {
+  color: red;
+}
+.vehicle {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-right: 100px;
+}
+
+.vehicle_box {
+  margin: 20px;
+}
+.client_vehicle_details {
+  gap: 20px;
+}
+
+.scrollbar {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  cursor: grab;
+}
+.scrollbar::-webkit-scrollbar {
+  width: 15px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 50px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}

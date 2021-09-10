@@ -1,0 +1,12 @@
+#reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-image: url(/images/review.webp), radial-gradient(#bdc3c7, #2c3e50);
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 95vh;
+  margin-bottom: 50px;
+}
