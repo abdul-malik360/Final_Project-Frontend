@@ -11,7 +11,7 @@ function addVehicleClient() {
       Year_Modal: document.getElementById("client_year_modal").value,
       VIN_Numb: document.getElementById("client_vin_numb").value,
       Reg_Numb: document.getElementById("client_reg_numb").value,
-      Username: document.getElementById("client_username").value,
+      Username: client_storage.getItem("username"),
     }),
   })
     .then((response) => response.json)

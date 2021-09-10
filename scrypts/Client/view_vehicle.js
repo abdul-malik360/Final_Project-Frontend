@@ -31,12 +31,13 @@ fetch(vehicle_url, {
       <p class="type">Type: ${vehicle.Type}</p>
       <p class="vin_numb">VIN Number: ${vehicle.VIN_Numb}</p>
       <p class="year_model">Year Model: ${vehicle.Year_Modal}</p>
-      <p class="reg_numb">Registration Number: ${vehicle.Reg_Numb}</p>
+      <p class="reg_numb">Registration Number: ${vehicle.Reg_Numb}</p>${vehicle.Username}
     </div>
       `;
     });
   });
 
+// show registration number for booking a service
 function showVehicle(url) {
   fetch(url)
     .then((response) => response.json())
