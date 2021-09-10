@@ -1,19 +1,20 @@
+// show vehicles
+
 const client_vehicle_storage = window.localStorage;
 
 let vehicles = [];
 
-fetch(
-  `https://qat-motors-api.herokuapp.com/view-client-vehicle/${client_vehicle_storage.getItem(
-    "username"
-  )}`,
-  {
-    method: "GET",
-    body: JSON.stringify(),
-    headers: {
-      "Content-type": "application/json",
-    },
-  }
-)
+let vehicle_url = `https://qat-motors-api.herokuapp.com/view-client-vehicle/${client_vehicle_storage.getItem(
+  "username"
+)}`;
+
+fetch(vehicle_url, {
+  method: "GET",
+  body: JSON.stringify(),
+  headers: {
+    "Content-type": "application/json",
+  },
+})
   .then((res) => res.json())
   .then((data) => {
     console.log(data);
@@ -35,3 +36,23 @@ fetch(
       `;
     });
   });
+
+function showVehicle(url) {
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let vehicles = data.data;
+
+      let show = document.querySelector(".show_vehicle");
+
+      vehicles.forEach((vehicle) => {
+        console.log(vehicle.Reg_Numb);
+        show.innerHTML += ` 
+          <option value="${vehicle.Reg_Numb}">${vehicle.Reg_Numb}</option>
+          `;
+      });
+    });
+}
+showVehicle(vehicle_url);

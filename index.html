@@ -152,7 +152,12 @@
             placeholder="123456/password"
             required
           />
-          <button class="regbtn" onclick="addClientHome()">Register</button>
+          <button
+            class="regbtn"
+            onclick="event.preventDefault(); addClientHome()"
+          >
+            Register
+          </button>
         </form>
       </div>
       <!-- client login -->
@@ -363,14 +368,5 @@
 
     <!-- services -->
     <script src="/scrypts/Home/services_home.js"></script>
-
-    <!-- scrypts -->
-    <!-- <script src="/scrypts/navbar.js"></script> -->
-    <!-- <script src="/scrypts/add_client.js"></script> -->
-    <!-- <script src="/scrypts/modal.js"></script> -->
-    <!-- <script src="/scrypts/drop.js"></script> -->
-    <!-- <script src="/scrypts/services.js"></script> -->
-    <!-- <script src="/scrypts/client_login.js"></script> -->
-    <!-- <script src="/scrypts/admin_login.js"></script> -->
   </body>
 </html>

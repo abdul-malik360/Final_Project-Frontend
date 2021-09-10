@@ -99,14 +99,14 @@
     <!-- account settings -->
     <section id="nav">
       <div id="profile-modal" class="modal">
-        <button onclick="toggleModal('profile-modal')" class="profilemodalbtn">
+        <button onclick="toggleModal('profile-modal')" class="modalbtn">
           X
         </button>
 
         <p id="client_details" class="profile"></p>
       </div>
       <div id="vehicle-modal" class="modal scrollbar">
-        <button onclick="toggleModal('vehicle-modal')" class="vehiclemodalbtn">
+        <button onclick="toggleModal('vehicle-modal')" class="modalbtn">
           X
         </button>
         <p id="client_vehicle_details" class="vehicle"></p>
@@ -119,11 +119,11 @@
         <form>
           REGISTER VEHICLE
           <label for="Type">Vehicle Type</label>
-          <input id="type" name="Type" type="text" placeholder="C63" required />
+          <input id="client_type" name="Type" type="text" placeholder="C63" required />
 
           <label for="Year_Modal">Year Model</label>
           <input
-            id="year_modal"
+            id="client_year_modal"
             name="Year_Modal"
             type="number"
             min="1900"
@@ -134,7 +134,7 @@
 
           <label for="VIN_Numb">Vin Number</label>
           <input
-            id="vin_numb"
+            id="client_vin_numb"
             name="VIN_Numb"
             type="text"
             placeholder="4Y1SL65848Z411439"
@@ -143,7 +143,7 @@
 
           <label for="Reg_Numb">Registration Number</label>
           <input
-            id="reg_numb"
+            id="client_reg_numb"
             name="Reg_Numb"
             type="text"
             placeholder="CAA 123-456"
@@ -152,13 +152,13 @@
 
           <label for="Username">Username</label>
           <input
-            id="username"
+            id="client_username"
             name="Username"
             type="text"
             placeholder="John1/Jane1"
             required
           />
-          <button onclick="event.preventDefault(), addVehicle()">
+          <button onclick="event.preventDefault(), addVehicleClient()">
             Register Vehicle
           </button>
         </form>
@@ -186,12 +186,7 @@
         >
           ADD APPOINTMENT
           <label for="Reg_Numb">Registration Number</label>
-          <input
-            name="Reg_Numb"
-            type="text"
-            placeholder="CAA 123-456"
-            required
-          />
+          <select class="show_vehicle" name="Reg_Numb" required></select>
 
           <label for="Type">Type of Service</label>
 
@@ -238,7 +233,7 @@
           <li class="serv_list diagnostic">Diagnostics</li>
           <li class="serv_list fleet">Fleet Service</li>
           <li class="serv_list merc">Mercedes Specialist</li>
-          <button class="bookbtn" onclick="servicefirstLogin(); ">
+          <button class="bookbtn" onclick="toggleModal('book-appointments-modal')">
             Use Our Service
           </button>
         </div>
@@ -323,6 +318,7 @@
     <!-- scrypts -->
     <script src="/scrypts/Client/view_client.js"></script>
     <script src="/scrypts/Client/view_vehicle.js"></script>
+    <script src="/scrypts/Client/register_vehicle_client.js"></script>
 
     <!-- scrypts -->
     <!-- <script src="/scrypts/navbar.js"></script> -->
@@ -331,16 +327,7 @@
     <script src="/scrypts/services.js"></script>
     
     <!-- <script src="/scrypts/view_vehicle.js"></script> -->
-    <script src="/scrypts/vehicles.js"></script>
+    <!-- <script src="/scrypts/vehicles.js"></script> -->
     <script src="/scrypts/weekend.js"></script>
   </body>
 </html>
-
-
-
-
-    
-    
-    
-    
-   

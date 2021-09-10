@@ -71,11 +71,11 @@
 
 /* profile */
 
-#profile-modal {
+.modal {
   display: none;
 }
 
-#profile-modal.active {
+.modal.active {
   display: flex;
   flex-direction: row-reverse;
   flex: 1 1 200px;
@@ -92,7 +92,7 @@
   background-color: #e3efe8;
   background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
 }
-.profilemodalbtn {
+.modalbtn {
   position: fixed;
   font-size: 40px;
 
@@ -105,7 +105,7 @@
   transition: 0.3s;
 }
 
-.profilemodalbtn:hover {
+.modalbtn:hover {
   color: red;
 }
 .profile {
@@ -120,27 +120,6 @@
 
 /* vehicle */
 
-#vehicle-modal {
-  display: none;
-}
-
-#vehicle-modal.active {
-  display: flex;
-  flex-direction: row-reverse;
-  flex: 1 1 200px;
-  flex: 0 1 200px;
-
-  position: fixed;
-
-  height: 70%;
-  width: 30%;
-
-  margin-top: 100px;
-  padding: 20px;
-
-  background-color: #e3efe8;
-  background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
-}
 .vehiclemodalbtn {
   position: fixed;
   font-size: 40px;
