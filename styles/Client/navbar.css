@@ -114,6 +114,18 @@
   align-self: center;
   margin-right: 100px;
 }
+.editmodalbtn {
+  background-color: transparent;
+  cursor: pointer;
+  border: transparent;
+  position: fixed;
+  margin: 50px;
+}
+.editmodalbtn:hover {
+  color: white;
+}
+.client_box {
+}
 .client_details {
   gap: 20px;
 }

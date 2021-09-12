@@ -165,6 +165,13 @@
 .loginput {
   margin-bottom: 10px;
 }
+.passbox {
+  display: flex;
+  flex-direction: row;
+}
+.tick {
+  align-self: center;
+}
 
 .logmodalbtn {
   position: fixed;

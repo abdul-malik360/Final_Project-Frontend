@@ -31,3 +31,7 @@ fetch(
     <p class="username client_details"> Username: ${client[6]}</p>
   </div>`;
   });
+
+// $("#edit_name")
+//   .value(`${client.Name}`)
+//   .prop("defaultValue", `${client.Name}`);

@@ -177,15 +177,19 @@
             required
           />
 
-          <label for="Password">Password</label>
-          <input
-            id="log_client_password"
-            name="Password"
-            class="loginput"
-            type="text"
-            placeholder="123456/password"
-            required
-          />
+          <div class="passbox">
+            <label for="Password">Password</label>
+            <input
+              id="log_client_password"
+              name="Password"
+              class="loginput"
+              type="password"
+              placeholder="123456/password"
+              required
+            />
+            <input class="tick" type="checkbox" onclick="show_password()" />
+          </div>
+
           <button
             class="logbtn"
             type="submit"

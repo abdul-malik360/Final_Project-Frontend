@@ -1,4 +1,5 @@
 // add vehicle
+const client_vehicles_storage = window.localStorage;
 
 function addVehicleClient() {
   fetch(`https://qat-motors-api.herokuapp.com/vehicle`, {
@@ -18,6 +19,10 @@ function addVehicleClient() {
     .then((data) => {
       console.log(data);
       console.log("success");
+      client_vehicles_storage.setItem(
+        "reg_numb",
+        document.getElementById("client_reg_numb").value
+      );
       window.location.reload();
       alert("Vehicle Register Successful, Please Book a Service");
     });

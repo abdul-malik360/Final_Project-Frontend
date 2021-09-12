@@ -101,10 +101,87 @@
       <div id="profile-modal" class="modal">
         <button onclick="toggleModal('profile-modal')" class="modalbtn">
           X
-        </button>
+        </button> 
 
-        <p id="client_details" class="profile"></p>
+        <button onclick="toggleModal('edit-client-modal'); getDefault()" class="editmodalbtn">
+          Edit Profile
+        </button> 
+        
+
+        <p id="client_details" class="profile"></p> 
       </div>
+
+      <div id="edit-client-modal" class="modal">
+        <button onclick="toggleModal('edit-client-modal')" class="modalbtn">
+          X
+        </button>
+        <form>
+          EDIT CLIENT
+          
+          <label for="Name">Name</label>
+          <input
+            id="edit_name"
+            name="Name"
+            type="text"
+            value=""
+            required
+          />
+          <label for="Surname">Surname</label>
+          <input
+            id="edit_surname"
+            name="Surname"
+            type="text"
+            placeholder="Doe"
+            required
+          />
+          <label for="Title">Title</label>
+          <select id="edit_title" name="Title">
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Miss">Miss</option>
+            <option id="title_edit" selected value="Miss">Default</option>
+          </select>
+
+          <label for="Email">Email</label>
+          <input
+            id="edit_email" 
+            name="Email"
+            type="email"
+            placeholder="john/jane@gmail.com"
+            required
+          />
+          <label for="Cell">Cell</label>
+          <input
+            id="edit_cell"
+            name="Cell"
+            type="text"
+            placeholder="0723524585"
+            required
+          />
+          <label for="Address">Address</label>
+          <input
+            id="edit_address"
+            name="Address"
+            type="text"
+            placeholder="No. Street Name, Area, Suburb"
+            required
+          />
+
+          <label for="Password">Password</label>
+          <input
+            id="edit_password"
+            name="Password"
+            type="text"
+            placeholder="123456/password"
+            required
+          />
+
+          <button onclick="event.preventDefault(), editClient(); ">
+            Edit Client
+          </button>
+        </form>
+      </div>
+
       <div id="vehicle-modal" class="modal scrollbar">
         <button onclick="toggleModal('vehicle-modal')" class="modalbtn">
           X
@@ -164,6 +241,8 @@
         >
           X
         </button>
+
+        <p id="client_appointment_details" class="appointment"></p>
       </div>
 
       <div id="book-appointments-modal" class="modal">
@@ -310,11 +389,14 @@
 
     <!-- scrypts -->
     <script src="/scrypts/Client/navbar_client.js"></script>
+    <script src="/scrypts/Client/book_service_client.js"></script>
 
     <script src="/scrypts/Client/view_client.js"></script>
+    <script src="/scrypts/Client/edit_client.js"></script>
     <script src="/scrypts/Client/view_vehicle.js"></script>
+    <script src="/scrypts/Client/view_appointments.js"></script>
     <script src="/scrypts/Client/register_vehicle_client.js"></script>
-    <script src="/scrypts/drop.js"></script>
+    <s src="/scrypts/drop.js"></s  cript>
 
     <!-- scrypts -->
     <!-- <script src="/scrypts/navbar.js"></script> -->

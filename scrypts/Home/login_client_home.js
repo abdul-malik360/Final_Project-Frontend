@@ -1,3 +1,13 @@
+// function to show and hide password
+function show_password() {
+  let x = document.getElementById("log_client_password");
+  if (x.type === "log_client_password") {
+    x.type = "password";
+  } else {
+    x.type = "log_client_password";
+  }
+}
+
 // client login
 
 const clientLoginURL = "https://qat-motors-api.herokuapp.com/client-login";
@@ -29,7 +39,13 @@ function clientLogin() {
           "username",
           document.getElementById("log_client_username").value
         );
+        user = json.data;
+        client_storage.setItem("user", user);
+
+        console.log(client_storage.getItem("user"));
+
         window.location = "./client.html";
+        alert("Welcome Back, Please enjoy our services");
       }
     });
 }
