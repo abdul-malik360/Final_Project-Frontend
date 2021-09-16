@@ -268,6 +268,8 @@
   margin-bottom: 20px;
 }
 
+/* admin */
+
 #admin-modal {
   display: none;
 }
@@ -332,4 +334,28 @@
 
 .adminhead {
   margin: 20px;
+}
+
+/* search */
+
+#search-modal {
+  display: none;
+}
+
+#search-modal.active {
+  display: flex;
+  flex-direction: row-reverse;
+  flex: 1 1 200px;
+  flex: 0 1 200px;
+
+  position: fixed;
+
+  height: 70%;
+  width: 30%;
+
+  margin-top: 100px;
+  padding: 20px;
+
+  background-color: #e3efe8;
+  background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
 }

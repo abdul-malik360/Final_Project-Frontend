@@ -7,19 +7,19 @@
     <title>Client</title>
 
     <!-- styles -->
-    <link rel="stylesheet" href="/styles/Client/navbar.css">
-    <link rel="stylesheet" href="styles/Client/body.css">
-    <link rel="stylesheet" href="/styles/Client/home.css">
-    <link rel="stylesheet" href="/styles/Client/about.css">
-    <link rel="stylesheet" href="styles/Client/services.css">
-    <link rel="stylesheet" href="styles/Client/reviews.css">
-    <link rel="stylesheet" href="styles/Client/contact.css">
-    <link rel="stylesheet" href="styles/Client/footer.css">
+    <link rel="stylesheet" href="/styles/Client/navbar.css" />
+    <link rel="stylesheet" href="styles/Client/body.css" />
+    <link rel="stylesheet" href="/styles/Client/home.css" />
+    <link rel="stylesheet" href="/styles/Client/about.css" />
+    <link rel="stylesheet" href="styles/Client/services.css" />
+    <link rel="stylesheet" href="styles/Client/reviews.css" />
+    <link rel="stylesheet" href="styles/Client/contact.css" />
+    <link rel="stylesheet" href="styles/Client/footer.css" />
 
-
-
-    
-    
+    <script
+      src="https://kit.fontawesome.com/ab6051d3ab.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- navbar -->
@@ -54,16 +54,10 @@
           </div>
 
           <div id="account-drop-list" class="dropdown-content">
-            <a
-              href="#"
-              class="drop-link"
-              onclick="toggleModal('profile-modal')"
+            <a href="#" class="drop-link" onclick="toggleModal('profile-modal')"
               >Profile</a
             >
-            <a
-              href="#"
-              class="drop-link"
-              onclick="toggleModal('vehicle-modal')"
+            <a href="#" class="drop-link" onclick="toggleModal('vehicle-modal')"
               >Vehicles</a
             >
             <a
@@ -89,7 +83,9 @@
             <a href="/index.html" class="drop-link">Log Out</a>
           </div>
         </li>
-      
+
+        <li>
+          <i onclick="toggleModal('search-modal')" class="fas fa-search"></i>
         </li>
       </ul>
     </nav>
@@ -101,14 +97,16 @@
       <div id="profile-modal" class="modal">
         <button onclick="toggleModal('profile-modal')" class="modalbtn">
           X
-        </button> 
+        </button>
 
-        <button onclick="toggleModal('edit-client-modal'); getDefault()" class="editmodalbtn">
+        <button
+          onclick="toggleModal('edit-client-modal'); getDefault()"
+          class="editmodalbtn"
+        >
           Edit Profile
-        </button> 
-        
+        </button>
 
-        <p id="client_details" class="profile"></p> 
+        <p id="client_details" class="profile"></p>
       </div>
 
       <div id="edit-client-modal" class="modal">
@@ -117,15 +115,9 @@
         </button>
         <form>
           EDIT CLIENT
-          
+
           <label for="Name">Name</label>
-          <input
-            id="edit_name"
-            name="Name"
-            type="text"
-            value=""
-            required
-          />
+          <input id="edit_name" name="Name" type="text" value="" required />
           <label for="Surname">Surname</label>
           <input
             id="edit_surname"
@@ -144,7 +136,7 @@
 
           <label for="Email">Email</label>
           <input
-            id="edit_email" 
+            id="edit_email"
             name="Email"
             type="email"
             placeholder="john/jane@gmail.com"
@@ -186,7 +178,57 @@
         <button onclick="toggleModal('vehicle-modal')" class="modalbtn">
           X
         </button>
+
+        <button
+          onclick="toggleModal('edit-vehicle-modal'); getDefault()"
+          class="editmodalbtn"
+        >
+          Edit Vehicle
+        </button>
         <p id="client_vehicle_details" class="vehicle"></p>
+      </div>
+
+      <div id="edit-vehicle-modal" class="modal">
+        <button onclick="toggleModal('edit-vehicle-modal')" class="modalbtn">
+          X
+        </button>
+        <form>
+          EDIT VEHICLE
+          <label for="Reg_Numb">Registration Number</label>
+          <select class="show_vehicle" name="Reg_Numb" required></select>
+
+          <label for="Type">Vehicle Type</label>
+          <input
+            id="edit_client_type"
+            name="Type"
+            type="text"
+            placeholder="C63"
+            required
+          />
+
+          <label for="Year_Modal">Year Model</label>
+          <input
+            id="edit_client_year_modal"
+            name="Year_Modal"
+            type="number"
+            min="1900"
+            max="2099"
+            step="1"
+            value="2021"
+          />
+
+          <label for="VIN_Numb">Vin Number</label>
+          <input
+            id="edit_client_vin_numb"
+            name="VIN_Numb"
+            type="text"
+            placeholder="4Y1SL65848Z411439"
+            required
+          />
+          <button onclick="event.preventDefault(), editVehicleClient()()">
+            Edit Vehicle
+          </button>
+        </form>
       </div>
 
       <div id="reg-vehicle-modal" class="modal">
@@ -196,7 +238,13 @@
         <form>
           REGISTER VEHICLE
           <label for="Type">Vehicle Type</label>
-          <input id="client_type" name="Type" type="text" placeholder="C63" required />
+          <input
+            id="client_type"
+            name="Type"
+            type="text"
+            placeholder="C63"
+            required
+          />
 
           <label for="Year_Modal">Year Model</label>
           <input
@@ -227,7 +275,6 @@
             required
           />
 
-          
           <button onclick="event.preventDefault(), addVehicleClient()">
             Register Vehicle
           </button>
@@ -288,7 +335,19 @@
           <button type="submit">Add Appointment</button>
         </form>
       </div>
-      
+
+      <div id="search-modal" class="modal">
+        <button onclick="toggleModal('search-modal')" class="modalbtn">
+          X
+        </button>
+
+        <label for="Type">Type of Service</label>
+
+        <select class="show_service_type" name="Type"></select>
+        <button type="submit">SEARCH</button>
+
+        <div class="show_service"></div>
+      </div>
     </section>
 
     <!-- Landing Page -->
@@ -305,7 +364,10 @@
           <li class="serv_list diagnostic">Diagnostics</li>
           <li class="serv_list fleet">Fleet Service</li>
           <li class="serv_list merc">Mercedes Specialist</li>
-          <button class="bookbtn" onclick="toggleModal('book-appointments-modal')">
+          <button
+            class="bookbtn"
+            onclick="toggleModal('book-appointments-modal')"
+          >
             Use Our Service
           </button>
         </div>
@@ -386,26 +448,23 @@
       <div class="footer_container"></div>
     </footer>
 
-
     <!-- scrypts -->
-    <script src="/scrypts/Client/navbar_client.js"></script>
-    <script src="/scrypts/Client/book_service_client.js"></script>
+    <!-- navbar -->
+    <script src="/scripts/Client/navbar_client.js"></script>
 
-    <script src="/scrypts/Client/view_client.js"></script>
-    <script src="/scrypts/Client/edit_client.js"></script>
-    <script src="/scrypts/Client/view_vehicle.js"></script>
-    <script src="/scrypts/Client/view_appointments.js"></script>
-    <script src="/scrypts/Client/register_vehicle_client.js"></script>
-    <s src="/scrypts/drop.js"></s  cript>
+    <!-- services -->
 
-    <!-- scrypts -->
-    <!-- <script src="/scrypts/navbar.js"></script> -->
-    <!-- <script src="/scrypts/modal.js"></script> -->
-    
-    <script src="/scrypts/services.js"></script>
-    
-    <!-- <script src="/scrypts/view_vehicle.js"></script> -->
-    <!-- <script src="/scrypts/vehicles.js"></script> -->
-    <!-- <script src="/scrypts/weekend.js"></script> -->
+    <!-- client -->
+    <script src="/scripts/Client/view_client.js"></script>
+    <script src="/scripts/Client/edit_client.js"></script>
+
+    <!-- vehicle -->
+    <script src="/scripts/Client/register_vehicle_client.js"></script>
+    <script src="/scripts/Client/view_vehicle.js"></script>
+    <script src="/scripts/Client/edit_vehicle.js"></script>
+
+    <!-- appointments -->
+    <script src="/scripts/Client/view_appointments.js"></script>
+    <script src="/scripts/Client/book_service_client.js"></script>
   </body>
 </html>

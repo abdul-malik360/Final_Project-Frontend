@@ -1,5 +1,6 @@
 #home {
-  background-image: url(/images/pic\ 2.jpg), radial-gradient(#bdc3c7, #2c3e50);
+  background-image: url(/images/Home\ Merc.jpg),
+    radial-gradient(#bdc3c7, #2c3e50);
   background-blend-mode: soft-light;
   background-size: cover;
   background-attachment: fixed;
@@ -45,7 +46,7 @@
   color: white;
 }
 .bookbtn:hover {
-  background-color: black;
+  background-color: #2c3e50;
   border-radius: 50px;
 }
 .serv_list {
@@ -56,65 +57,44 @@
   border-bottom: solid 1px white;
 }
 .serv_list:hover {
-  border-bottom: solid 1px black;
-  color: black;
+  border-bottom: solid 1px #2c3e50;
+  color: #2c3e50;
   cursor: pointer;
 }
 
 .serv_list:hover {
   position: relative;
 }
-.premier:hover:after {
-  content: url(/images/premier\ service.jpeg);
+.serv_list:hover:after {
   display: block;
   position: fixed;
-  left: 40%;
-  top: 20%;
+  left: 5%;
+  top: 15%;
   transition: 0.6s;
+  border-bottom: white 3px solid;
+  box-shadow: 0px 0px 15px 25px #b8c6db;
+}
+.premier:hover:after {
+  content: url(/images/Premier\ Servicing.jpg);
 }
 .repair:hover:after {
-  content: url(/images/all\ merc.jpeg);
-  display: block;
-  position: fixed;
-  left: 40%;
-  top: 20%;
-  transition: 0.6s;
+  content: url(/images/Mercedes\ Benz\ Vehicles\ final.jpeg);
 }
 
 .engine:hover:after {
-  content: url(/images/engine.jpeg);
-  display: block;
-  position: fixed;
-  left: 40%;
-  top: 20%;
-  transition: 0.6s;
+  content: url(/images/Engine\ Rebuilding.jpeg);
 }
 
 .diagnostic:hover:after {
-  content: url(/images/diagnostics.jpeg);
-  display: block;
-  position: fixed;
-  left: 40%;
-  top: 20%;
-  transition: 0.6s;
+  content: url(/images/Diagnostics.jpeg);
 }
 
 .fleet:hover:after {
-  content: url(/images/fleet.jpeg);
-  display: block;
-  position: fixed;
-  left: 40%;
-  top: 20%;
-  transition: 0.6s;
+  content: url(/images/Fleet\ Service_720x480.jpeg);
 }
 
 .merc:hover:after {
-  content: url(/images/merc\ benz.jpeg);
-  display: block;
-  position: fixed;
-  left: 40%;
-  top: 20%;
-  transition: 0.6s;
+  content: url(/images/Mercedes\ Logo.jpeg);
 }
 
 .home_info {

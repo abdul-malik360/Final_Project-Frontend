@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Home</title>
 
     <!-- styles -->
@@ -15,6 +16,11 @@
     <link rel="stylesheet" href="/styles/Home/reviews.css" />
     <link rel="stylesheet" href="styles/Home/contact.css" />
     <link rel="stylesheet" href="/styles/Home/footer.css" />
+
+    <script
+      src="https://kit.fontawesome.com/ab6051d3ab.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- navbar -->
@@ -62,6 +68,10 @@
               >Login</a
             >
           </div>
+        </li>
+
+        <li>
+          <i onclick="regLogModal('search-modal')" class="fas fa-search"></i>
         </li>
       </ul>
     </nav>
@@ -176,17 +186,16 @@
             placeholder="John1/Jane1"
             required
           />
-
+          <label for="Password">Password</label>
+          <input
+            id="log_client_password"
+            name="Password"
+            class="loginput"
+            type="password"
+            placeholder="123456/password"
+            required
+          />
           <div class="passbox">
-            <label for="Password">Password</label>
-            <input
-              id="log_client_password"
-              name="Password"
-              class="loginput"
-              type="password"
-              placeholder="123456/password"
-              required
-            />
             <input class="tick" type="checkbox" onclick="show_password()" />
           </div>
 
@@ -266,6 +275,19 @@
           </button>
         </form>
       </div>
+      <!-- services -->
+      <div id="search-modal" class="modal">
+        <button onclick="regLogModal('search-modal')" class="adminmodalbtn">
+          X
+        </button>
+
+        <label for="Type">Type of Service</label>
+
+        <select class="show_service_type" name="Type"></select>
+        <button type="submit">SEARCH</button>
+
+        <div class="show_service"></div>
+      </div>
     </section>
 
     <!-- Landing Page -->
@@ -299,12 +321,30 @@
 
     <!-- About Page -->
     <section id="about">
-      <div class="container">
-        <div class="head_box">
-          <h1 class="heading">About US</h1>
-          <p>over 17 plus 44 years of experiance</p>
-          <p class="location">Location: Colorado Park, Mitchell's Plain</p>
-          <p class="head_description">Quality Automotive Technician</p>
+      <div class="about_container">
+        <div class="about_head_box">
+          <h1 class="about_heading">About Us</h1>
+          <p class="about_head_description">Over 60 years of Experiance</p>
+        </div>
+        <div class="about_details">
+          <p class="about_span">
+            We are Mercedes Benz Specialists. Mr Mohamed, owner of QAT Motors
+            has been employed by Mercedes Benz for over 35 years. He worked as a
+            mechanic and through his years of service built him self up to the
+            position of Work Shop Manager. He retired in the year 2017 and ever
+            since has put all his time and effort into building the business and
+            what it is and stands for today.
+          </p>
+          <p class="about_span">
+            Our head Mechanic, Mustafaa Mohamed, has been employed by Mercedes
+            Benz and with all the knowledge he absorbed from Mercedes Benz and
+            prior work and study places, he now leads our team into success.
+          </p>
+          <p class="about_span">
+            We are located in Colorado Park, Mitchell's Plain. <br />
+            Our business hours are from 8am-6pm. <br />
+            All vehicles are to be booked from 7am.
+          </p>
         </div>
       </div>
     </section>
@@ -313,15 +353,13 @@
       <div class="services_container">
         <div class="service_head_box">
           <h1 class="service_heading">Our Services</h1>
-          <p>
-            All service prices is subject to stripping and includes parts and
+          <p class="service_head_description">
+            All service prices are subject to stripping and includes parts and
             labour
           </p>
         </div>
 
-        <div class="containers">
-          <div class="show_services"></div>
-        </div>
+        <div class="show_services"></div>
       </div>
     </section>
 
@@ -365,12 +403,15 @@
     <!-- scrypts -->
 
     <!-- nav/reg/log -->
-    <script src="/scrypts/Home/navbar_home.js"></script>
-    <script src="/scrypts/Home/reg_client_home.js"></script>
-    <script src="/scrypts/Home/login_client_home.js"></script>
-    <script src="/scrypts/Home/login_admin_home.js"></script>
+    <script src="/scripts/Home/navbar_home.js"></script>
+    <script src="/scripts/Home/reg_client_home.js"></script>
+    <script src="/scripts/Home/login_client_home.js"></script>
+    <script src="/scripts/Home/login_admin_home.js"></script>
 
     <!-- services -->
-    <script src="/scrypts/Home/services_home.js"></script>
+    <script src="/scripts/Home/services_home.js"></script>
+
+    <!-- reviews -->
+    <script src="/scripts/Home/reviews_home.js"></script>
   </body>
 </html>
