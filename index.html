@@ -7,6 +7,20 @@
 
     <title>Home</title>
 
+    <!-- owl carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+    />
+
     <!-- styles -->
     <link rel="stylesheet" href="/styles/Home/navbar.css" />
     <link rel="stylesheet" href="/styles/Home/body.css" />
@@ -365,18 +379,66 @@
 
     <!-- Reviews Page -->
     <section id="reviews">
-      <div class="container">
-        <div class="head_box">
-          <h1 class="heading">Reviews</h1>
-          <button onclick="reviewfirstLogin(); ">Add Review</button>
+      <div class="reviews_container">
+        <div class="reviews_head_box">
+          <h1 class="reviews_heading">Reviews</h1>
+          <p class="reviews_head_description">
+            Feed back from our valued customers
+          </p>
         </div>
-        <div class="show_reviews"></div>
+
+        <div class="owl-carousel"> 
+          <div class="container">
+            <div class="text">
+              <h2 class="name">Uthmaan Breda</h2>
+              <h3 class="title">-CEO-</h3>
+              <p class="message">
+              "A cool dude. He knows his priorities, is hard working and driven."
+              </p>
+            </div>       
+           
+            <div class="pics">
+              <img src="https://picsum.photos/id/1025/367/267" alt="Picture of Uthmaan" /> 
+            </div>
+           </div>
+ 
+           <div class="container">
+             <div class="text">
+               <h2 class="name">Masimthembe Ndaloenie</h2>
+               <h3 class="title">-Full Stack Developer-</h3>
+               <p class="message">
+                 "Purpose driven person who knows what he wants and fully strives for
+                 excellence."
+               </p>
+             </div>       
+            
+             <div class="pics">
+               <img src="" alt="Picture of Masi" /> 
+             </div>
+           </div>
+ 
+           <div class="container">
+             <div class="text">
+               <h2 class="name">Justin Calvert</h2>
+               <h3 class="title">10/10 <i class="fas fa-star"></i></h3>
+               <p class="message">
+               "A cool dude. He knows his priorities, is hard working and driven."
+               </p>
+             </div>       
+            
+             <div class="pics">
+               <img src="" alt="Picture of Justin" /> 
+             </div>
+           </div>
+
+        
       </div>
+      <button onclick="reviewfirstLogin(); ">Add Review</button>
     </section>
 
     <!-- Contact Page -->
     <section id="contact">
-      <div class="container">
+      <div class="contact_container">
         <div class="head_box">
           <h1 class="heading">CONTACT US</h1>
         </div>
@@ -412,6 +474,30 @@
     <script src="/scripts/Home/services_home.js"></script>
 
     <!-- reviews -->
+    <!-- owl carousel -->
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    $(document).ready(function () {
+      $(".owl-carousel").owlCarousel({
+        items: 1,
+        margin: 50,
+        loop: true,
+        stagePadding: 100,
+        dots: false,
+        autoplay: true,
+      });
+    });
+  </script>
     <script src="/scripts/Home/reviews_home.js"></script>
   </body>
 </html>
